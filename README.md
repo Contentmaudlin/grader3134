@@ -1,6 +1,6 @@
 ##3134 grader
 
-A quick script for testing P2 for 3134.
+A quick script for testing `SymbolBalance` for 3134.
 
 Runs and compiles every `SymbolBalance.java` on a variable amount of testers, outputting student output into a text file called `results.txt` in each student's respective directory.
 #Instructions
