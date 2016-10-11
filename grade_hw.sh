@@ -60,7 +60,7 @@ cd */
 COUNTER=0
 while [ $COUNTER -lt $dircount ]; do
 	echo "Testing: ${PWD##*/}"
-	printf "RUNNING $((dircount + 1)) TESTS ON ${PWD##*/}\n\n" > results.txt
+	printf "RUNNING $((testcount - 1)) TESTS ON ${PWD##*/}\n\n" > results.txt
 	javac SymbolBalance.java > /dev/null 2>&1
 	fileexists=$(ls | grep "SymbolBalance.class")
 	if [[ -z "$fileexists" ]]; then
@@ -70,7 +70,9 @@ while [ $COUNTER -lt $dircount ]; do
 		COUNTER2=1
 		while [ $COUNTER2 -lt ${testcount} ]; do
 			echo "$TESTING TEST${COUNTER2}.java" >> results.txt
-			java SymbolBalance "../../testfiles/Test${COUNTER2}.java" >> results.txt
+			echo "***********" >> results.txt
+			java SymbolBalance "../../testfiles/Test${COUNTER2}.java" 2>&1 >> results.txt
+			echo " " >> results.txt
 			let COUNTER2=COUNTER2+1
 		done
 	fi
