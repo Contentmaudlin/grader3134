@@ -71,7 +71,7 @@ while [ $COUNTER -lt $dircount ]; do
 		while [ $COUNTER2 -lt ${testcount} ]; do
 			echo "$TESTING TEST${COUNTER2}.java" >> results.txt
 			echo "***********" >> results.txt
-			java SymbolBalance "../../testfiles/Test${COUNTER2}.java" 2>&1 >> results.txt
+			java SymbolBalance "../../testfiles/Test${COUNTER2}.java" >> results.txt 2>&1
 			echo " " >> results.txt
 			let COUNTER2=COUNTER2+1
 		done
