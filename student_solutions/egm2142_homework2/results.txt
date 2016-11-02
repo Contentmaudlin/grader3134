@@ -1,2 +1,0 @@
-RUNNING 6 TESTS ON egm2142_homework2
-

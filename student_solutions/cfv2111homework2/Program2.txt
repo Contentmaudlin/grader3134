@@ -1,9 +1,0 @@
-
-Big-O Notation 
-
-
-enqueue method: has a big-O (1) since the push method has a big-O(1). 
-
-dequeue method: has a big-O (n) since the pop method has a big-O (1) but the shiftElements method has to copy all the elements of the first stack into the second stack if the second stack is empty, so it has a big-O of n 
-
-

@@ -1,6 +1,0 @@
-Marco Starger
-mes2312
-
-The enqueue operation has a big O runtime of O(1). No matter how long the queue is, to add another element is simply a matter of adding a value to the top of the stack (or to the front of the linkedlist that we used to make the stack)
-
-The dequeue operation has a big O runtime of O(n). Since the operation removes all the elements from the stack, and then puts them back later (minus the dequeued element), it actually runs at about 2n, but in big O notation you can ignore the coefficient so the runtime is just n.

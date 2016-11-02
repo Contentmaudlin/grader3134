@@ -1,5 +1,0 @@
-The big-O running time for my enqueue() operation is O(1), since enqueue() only
-pushes a new element into the forward stack.
-The big-O running time for my dequeue() operation is O(n), since if all items
-are in the forward stack, and a dequeue() operation is called, I would have to
-pop all the items in the forward stack and push them into the reverse stack.

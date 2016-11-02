@@ -1,9 +1,0 @@
-enqueue runs in O(1) as all we're doing is pushing the one element to the
-top of the stack (which is a linked list).
-
-dequeue however has a few scenarios:
-  - queue is empty, so O(1) to return null
-  - stack2 has elements, so O(1) to pop it off the top
-  - stack2 is empty, whereby we need to move everything over from stack1
-    and then pop off the top.  So that's O(N) + O(1) so O(N).
-

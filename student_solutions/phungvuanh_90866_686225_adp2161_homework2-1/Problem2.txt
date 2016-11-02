@@ -1,8 +1,0 @@
-Anh Phung
-adp2161
-Problem2.txt
-
-1. Enqueue(): This operation should take O(1) time, since we only need to push one element into the stack.
-
-2. Dequeue(): If the second stack is not empty, then dequeuing is the same as pop one element from that stack, so it takes O(1) in time. 
-If the second stack is empty, then we need to push all elements from first stack to the second stack before dequeuing (popping out from second stack). Hence it takes O(n) in time.

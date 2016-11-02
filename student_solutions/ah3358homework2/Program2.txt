@@ -1,4 +1,0 @@
-Name: Anlan Huang   UNI: ah3358
-
-The big-O running time of the enqueue operation for my queue implementation is O(n)
-The big-O running time of the dequeue operation for my queue implementation is O(1)

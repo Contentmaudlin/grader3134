@@ -1,8 +1,0 @@
-Loie Plautz
-lmp2180
-Homework 2
-
-When using two stacks, one of the two operations (enqueue and dequeue) will have a much greater cost because the objects in the queue must be pushed into one stack and popped off in order to the other stack. This can happen either during enqueuing or dequeuing, but I picked during dequeuing. 
-
-The big-O of my enqueue operation is O(1) because the object is simply pushed onto the top of the first stack. 
-The big-O of my dequeue operation is O(N), because each object in the first stack is popped off and pushed to the second stack so it can be popped off the second stack in the correct order. 

@@ -1,7 +1,0 @@
-The Big-O runtime of the enqueue and dequeue operations:
-
-The time complexity of the push and pop operations are O(1). Since all the pushes are done at the tail, and all the pops are done at the head, the time complexity remains at O(1).
-
-I used an arraylist in order to avoid having to overwrite an array everytime I ran out of space. That would have caused a O(N) everytime the array needed to grow.
-
-For enqueue operations the time complexity is O(1), for dequeue operations the time complexity is O(1).

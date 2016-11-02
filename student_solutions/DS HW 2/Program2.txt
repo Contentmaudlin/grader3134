@@ -1,9 +1,0 @@
-Ziyi Sun 
-zs2293
-COMS3134
-
-HW 2 Programming 2b
-
-Enqueue operation has O(1) because it only requires pushing an element onto a stack, or adding a node to the end of a linked list.
-
-Dequeue operation has O(6n). To move all of s1 elements to s2, the program needs to see if s1 has an element to pop, then pop it, and push it to s2 for n elements in s1, for O(3n). Afterwards it needs to pop s2 to find the dequeue element which is O(1). Finally to move all of s2 elements back to s1, the program needs to see if s2 has an element to pop, then pop it, and push it to s1, for n-1 elements in s2, for O(3n-3). Thus the running time is O(6n-2)=O(6n). 

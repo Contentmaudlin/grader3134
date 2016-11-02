@@ -1,1 +1,0 @@
-Both enqueue and dequeue operations are O(N) because they are linear. The operation times are directly proportional to the input size. There is no recursion or complicated loops. For ever element added/removed, the program has to iterate through one more element, thus adding linearly to the runtime.

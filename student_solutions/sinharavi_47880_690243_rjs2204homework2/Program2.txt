@@ -1,3 +1,0 @@
-//rjs2204, Ravi Sinha
-
-Each element is added into stack 1 only once. And each element is popped from stack 1 at once and is pushed into stack 2 at once. And each element is popped from stack 2 for dequeue at once. Each push/pop takes O(1) for linked list. The run time of enqueque is simply O(1) because it is just pushing in order. It means amortized time for dequeue will O(1), despite worst scenario is O(n). Best scenario means all elements will be dequeued at finally, queue will be empty at end, all enqueued elements will be dequeued. Worst scenario means only one element will be dequeued, all other elements remain in queue, but it does not make sense to use queue for such cases.

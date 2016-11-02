@@ -1,6 +1,0 @@
-For the TwoStackQueue class, enqueue runs in O(1) time because it simply pushes an object
-to the top of stack1 and does not rely on the size of either stack.
-
-The dequeue method runs in O(n) time because every time it is called, it must move every
-item from stack1 to stack2 and then back. It runs in 2n time where n is the number of
-entries in the queue, but big-Ohdisregards constants so the time complexity remains O(n).

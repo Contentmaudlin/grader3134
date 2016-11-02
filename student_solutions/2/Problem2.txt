@@ -1,6 +1,0 @@
-Or Aboodi, oda2102
-Problem 2 running time question
-
-for the enqueue, the running time is O(1). This is because we are only adding 1 item to the beginning of the queue, which in reality is adding 1 item to the beginning of the stack, which is adding 1 item to the beginning of a doubly linked list, of which adding in either end is O(1). 
-
-for the dequeue, there are two operations being done, both pop() and push(), both of which are O(1),since they are dealing with the first element of a doubly linked list. However, these operations are being done N times as the s1 elements are transfered to s2, and then N-1 times as s2 elements are transferred back to s1. This means that the running time is O(N) since these two instances are added, not multiplied. 

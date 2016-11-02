@@ -1,7 +1,0 @@
-Jennifer Bi
-jb3495
-Homework 2, Program 2
-
-Enqueuing is a simple push, hence O(1).
-
-Dequeueing actually involves enqueuing the entire first stack into the second in the worst case scenario. Since push and pop run in O(1) time with LinkedList, and enqueue and dequeue also run in O(1) time, the runtime is n*O(1)=O(n).

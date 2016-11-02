@@ -1,7 +1,0 @@
-Angela Zhang
-amz2132
-COMS 3134 Data Structures
-
-Big-O Analysis for Problem 2
-The big-O running time of my enqueue operation is O(1), which is constant because each time it is run it just adds a single element to the stack.
-The big-O running time of my dequeue operation is O(2N+1), since each time the dequeue operation is run the objects on the input stack must be popped, which is O(N), and then they must be pushed to the output stack, which is O(N), and when an element is popped from the output stack, that is O(1), so the total running time is O(2N+1).

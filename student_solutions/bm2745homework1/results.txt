@@ -1,3 +1,0 @@
-RUNNING 6 TESTS ON bm2745homework1
-
-Student file doesn't exist / doesn't compile / wrong name

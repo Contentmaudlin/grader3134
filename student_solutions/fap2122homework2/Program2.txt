@@ -1,8 +1,0 @@
-//Fernando A. Pascual
-//fap2122
-//Data Structures HW2
-
-Enqueue is O(1) because it is a constant one step operation
-
-Dequeue is O(1) if the dequeue stack is not empty since it is a matter of just
-popping once. If the dequeue stack is empty, the algorithm is O(n) because the algorithm now requires the process of a while loop to empty the enqueue stack

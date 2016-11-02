@@ -1,3 +1,0 @@
-RUNNING 85 TESTS ON sendikdan_251676_686000_drs2176@homework2
-
-Student file doesn't exist / doesn't compile / wrong name

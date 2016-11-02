@@ -1,130 +1,0 @@
-Problem 1)
-
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
-
-public class Problem1 {
-
-
-	public static <AnyType> void printLots(List<AnyType> L, List<Integer> P) {
-		AnyType n = null;
-		//iterate through P
-		for(int i : P){
-			//iterate through L
-			Iterator<AnyType> it = L.iterator();
-			for(int j=0; j<=i; j++){
-				if (i >= L.size()){
-					System.out.print("Index asked for is too big: ");
-					n = null;
-					break;
-				}
-				//n will ultimately be set as the next with j=i
-				else { 						
-					n = it.next();
-				}
-			}
-			System.out.println(n);
-		}
-	}
-
-
-	public static void main(String[] args) {
-		List<Integer> L = Arrays.asList(1,2,3,4,5,6,7,8,9);
-		List<Integer> P = Arrays.asList(0,1,0,3,4,10,6);
-		printLots(L, P);
-	}
-
-}
-		
-
-Problem 2) Weiss 3.4
-
-int[] intersection(list1, list2)
-	finalList[] = []
-	idx1 = 0
-	idx2 = 0
-	while idx1 < length(list1) and idx2 < length(list2)
-		if list1[idx1] = list2[idx2]
-			add elem to finalList
-			idx1++, idx2++
-		else
-			++ to the idx of the list with the smaller elem at the index checked
-	
-	return finalList
-
-				
-Problem 3) Weiss 3.24
-
-Public class StackNode 
-Public int previous; 
-Public int val;
-//constructorpublic StackNode(int p, int v) 
-	where previous = p;	Val = v;
-public class twoStack 
-	Boolean [] indexfree; 
-	Int [] pointers = {­1, ­1};
-
-
-Stacksize = 20;StackNode[] mystack = new StackNode[stackSize*2];W​here StackNode is a separate class that has (int previous and int value) 
-
-Public ArrayStack(int size)Mystack = new StackNode[stacksize]; 
-freeIndex = a new array with size of stacksize 
-
-For all i in freeIndex
-	freeIndex[i] = true
-Private method nextfreeindex ()	For i=0; i <stacksize; i++ 
-		Return i where it is free, 
-		else say stack array is full.
-Method add to stack(int stackVal, int value)	Get the free index location from above method	If stack is full return that it’s full, unable to insert	Else		Lastindex = location of pointers at stackval		Change the “freeindex” value of that index to false; 
-		Mystack[index] = new StackNode (index, val) to insert that value.Method to delete from stack (int stackval)	If pointers are at ­1, then it’s an empty stack.	Move the stack pointer to the stackval you want to remove from	removeitem = mystack[pointers[stackval]].val;	Move pointer from current stackval location to the one previous to it.	Change lastindex to null, and freeindex at that lastindex location to true (cleared up). 
-	Return the item;
-
-
-Problem 4) MTA Subway
-
-To reorganize a train, the train dispatcher can use only the following operations:
-Move the car at the front of the input track to the back of of the output track.
-Move the car at the front of the input track to the top of one of the holding tracks.
-Move the car at the top of one of the holding tracks to the back of the output track.
-
-(a) Provide a solution for this specific input train and 3 holding tracks as a sequence of steps.
-
-The best way to do this is if each holding track cannot have a train of a larger number above it. This way, they can be evenly rearranged to be ascending from back to front with three holding tracks. See below for demo
-
-input: 596728134		output: 
-			_ _ _
-
-input: 59672813		4	output:
-			_ _ _
-
-input: 596728		3	output: 1
-			4
-			_ _ _
-
-input: 5967		3	output: 21
-			4 8
-			_ _ _	
-
-input: 596		  7	output: 321
-			4 8
-			_ _ _
-
-input: 5		  7	output: 4321
-			6 8 9
-			_ _ _
-
-input: 				output: 7654321
-			  8 9
-			_ _ _
-
-input: 				output: 987654321
-			_ _ _
-
-
-
-(b) Show an example for a train of length 9 that cannot be rearranged in increasing order using 3 holding tracks. 
-
-The sequence 8, 3, 5, 2, 9, 7, 1, 6, 4 cannot be rearranged because the 9 would be forced to go on top of the 4, 6, or 7 because those would fill all three slots because you couldn’t stack any of the later ones on top of the previous ones, and thus, you wouldn’t be able to access those lower numbers before the 9 for the output.
-

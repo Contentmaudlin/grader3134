@@ -1,6 +1,0 @@
-"In a file called Program2.txt, discuss the big-O running time of the enqueue and dequeue operation for your queue implementation."
-
-The running time of my enqueue and dequeue operations are O(n). To enqueue or dequeue items, in the worst-case analysis my program always moves every item that has been put in the queue from one stack to the other stack. This requires 2 operations per item -- pop then push -- but we drop the constant 2 and the running time is O(n).
-
-
-

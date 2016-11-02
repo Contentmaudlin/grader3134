@@ -1,7 +1,0 @@
-name: Yu Zheng
-UNI: yz2978
-
-the big-O running time of the enqueue and dequeue operation for the queue
-
-enqueue:O(1), just one operation, which is push data into the first stack
-dequeue:O(n), in the worst case, when stack2 is empty, we have to move all the data inversely from stack1 to stack2, a push command plus a pop command for each of the data stored in stack1. After that, we pop from stack2, which has no effect on the big-O cost.
