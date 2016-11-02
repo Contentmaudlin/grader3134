@@ -1,0 +1,24 @@
+RUNNING 85 TESTS ON hl3020HW2
+
+ TEST1.java
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+that doesn't make sense. You can't close comment without opening it.
+comment block not closed
+ TEST2.java
+not balanced! You must deal with '{'.
+ TEST3.java
+all's good.
+ TEST4.java
+unbalanced! You must balance ')'.
+ TEST5.java
+not balanced - you must balance '}'.
+ TEST6.java
+not balanced! You must deal with '{'.
+Quotes not balanced

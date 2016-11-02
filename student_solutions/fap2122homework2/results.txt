@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON fap2122homework2
+
+ TEST1.java
+*//*this tests an unbalanced [ operator*/
+ TEST2.java
+/* this is to test whether the program can deal with an imbalance of { */
+ TEST3.java
+/* this is to test whether the program ignores imbalances in the comment blocks */
+ TEST4.java
+/*this tests an unbalanced ] operator*/
+ TEST5.java
+/* this is to test whether the program can deal with an imbalance of } */
+ TEST6.java
+/* this is to test whether the program can deal with an imbalance of "  */

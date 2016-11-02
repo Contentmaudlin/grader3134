@@ -1,0 +1,211 @@
+//*****************************************
+//Arjun Mangla
+//am4409
+//Paul Blaer
+// Data Structures
+//Fall 2016
+//Homework-2
+//*****************************************
+
+	Homework - 2 (Written Part)
+
+1.
+
+	import java.util.Iterator;
+	import java.util.LinkedList;
+	
+	//Class for WProblem1 generic object that has instance variables as 
+	//required generic LinkedLists L and P
+	public class WProblem1 <AnyType> implements Comparable <AnyType>{
+		LinkedList <AnyType> L;
+		LinkedList <AnyType> P;
+		
+		//Method printLots takes in generic LinkedList L and integer
+		//LinkedList P as arguments
+		public void printLots(LinkedList <AnyType> L, LinkedList <Integer> P) {
+			
+			// count helps compare the indices of L to the elements in P
+			int count = 0;
+
+			//Using iterator to iterate through P
+			//Note: only using Iterator class to instantiate iterator as variable
+			Iterator <Integer> itr = P.iterator();
+			Integer i = itr.next();
+			
+				//for-each loop with the help of the iterator interface
+				for (AnyType o: L) {
+					
+					//when the index of L is equal to the item in P, 
+					//the corresponding object is printed
+					if(count == i) {
+						System.out.println(o);
+						i = itr.next();
+					}
+					//count is incremented to keep track of index
+					count++;	
+				}
+		}
+
+2. 
+
+public LinkedList <AnyType> WProblem2(LinkedList <AnyType> L1,
+			LinkedList <AnyType> L2) {
+		
+		//Create a LinkedList inside to use to return result
+		//without altering original lists
+		LinkedList <AnyType> Intersection = null;
+		//Iterators itr1 and itr2 iterate through L1 and L2 respectively
+			Iterator <AnyType> itr1 = L1.iterator();
+			Iterator <AnyType> itr2 = L2.iterator();
+		
+			// Assigning initial values to item1 and item2 from L1 and L2
+			AnyType item1 = itr1.next();
+			AnyType item2 = itr2.next();
+			
+			//This loop will continue till atleast one of the lists is exhausted
+			while (itr1.hasNext() && itr2.hasNext()) {
+			
+				//If item1 < item2, item1 will be changed to the next value
+				if (item1.compareTo(item2) < 0) {
+					item1 = itr1.next();
+				}
+				
+				//If item1 > item2, item2 will be changed to the next value
+				if (item1.compareTo(item2) > 0) {
+					item2 = itr2.next();
+				}
+				//If items are equal, they're added to Intersection List
+				if (item1.compareTo(item2) == 0) {
+						Intersection.add(item1);
+						item1 = itr1.next();
+						item2 = itr2.next()
+				}
+			}
+		
+		return Intersection;
+	}
+
+	//Haven't given implementation of compareTo as I didn't know what
+	//data type/ object is being used for this method.
+	@Override
+	public int compareTo(AnyType o) {
+		…
+	}
+}
+
+3. 
+
+//Class with implementation of two stacks on one array from opposite sides
+public class TwoStackOneArray <AnyType> {
+	AnyType [] common;
+	private int topOfStack1;
+	public int size1;
+	public int size2;
+	private int topOfStack2;
+	
+	//The argument would be the given input array
+	// top of stack for 1st stack starts from -1
+	//for 2nd, from the length of the array
+	//sizes are both initialized to 0
+	public TwoStackOneArray(AnyType [] input) {
+		common = input;
+		topOfStack1 = -1;
+		topOfStack2 = common.length;
+		size1 = 0;
+		size2 = 0;
+	}
+	
+	//push for the first stack is like the regular push in the
+	// MyStack class, because, here, the top is the first element at the start.
+	public void push1(AnyType x) {
+		
+		if (size1 + size2 < common.length) {
+		common[++topOfStack1] = x;
+		size1++;
+		}
+		else {
+			System.out.println("Stack Overflow");
+		}
+	}
+	
+	// push for the 2nd stack decrements the value of topOfStack
+	//before assigning the value because, here, the top is the last element
+	//at the start
+	public void push2(AnyType x) {
+		
+		if (size1 + size2 < common.length) {
+		common[--topOfStack2] = x;
+		size2++;
+		}
+		else {
+			System.out.println("Stack Overflow");
+		}
+	}
+	
+	//regular pop as in MyStack
+	public AnyType pop1() {
+		if (size1 > 0) {
+		size1--;
+		return common[topOfStack1--];
+		}
+		else {
+			System.out.println("Nothing to pop!");
+			return null;
+		}
+	}
+	
+	//Again, pops from opposite side so returns the value and then
+	//increments value of topOfStack2
+	public AnyType pop2() {
+		if (size2 > 0) {
+		size2--;
+		return common[topOfStack2++];
+		}
+		else {
+			System.out.println("Nothing to pop!");
+			return null;
+		}
+	}
+	
+	//Regular pop as in MyStack
+	public AnyType top1() {
+		return common[topOfStack1];
+	}
+	
+	//Regular pop as in MyStack
+	public AnyType top2() {
+		return common[topOfStack2];
+	}
+}
+
+4. 
+
+a) The following steps have to be followed:
+Move the car(4) at the front of the input track to the top of S1.
+Move the car(3) at the front of the input track to the top of S1.
+Move the car(1) at the front of the input track to the back of the output track.
+Move the car(8) at the front of the input track to the top of S2.
+Move the car(2) at the front of the input track to the back of the output track.
+Move the car(3) at the top of S1 to the back of the output track.
+Move the car(4) at the top of S1 to the back of the output track.
+Move the car(7) at the front of the input track to the top of S2.
+Move the car(6) at the front of the input track to the top of S2.
+Move the car(9) at the front of the input track to the top of S1.
+Move the car(5) at the front of the input track to the back of the output track.
+Move the car(6) at the top of S2 to the back of the output track.
+Move the car(7) at the top of S2 to the back of the output track.
+Move the car(8) at the top of S2 to the back of the output track.
+Move the car(3) at the top of S1 to the back of the output track.
+
+
+(b) [1, 8, 6, 4, 2, 9, 7, 5, 3]
+
+Move the car(3) at the front of the input track to the top of S1.
+Move the car(5) at the front of the input track to the top of S2.
+Move the car(7) at the front of the input track to the top of S3.
+
+Now, if we stack car(9) on any of these holding tracks, none of these cars that are already occupying all the holding tracks, which are all supposed to come before car(9), will be able to come out before it. 
+
+Car(9) can’t be sent to the output track before other elements either as it is supposed to be the last one into the output track.
+
+Therefore, we can’t move further from here. So, This train can’t be sorted using 3 holding tracks.

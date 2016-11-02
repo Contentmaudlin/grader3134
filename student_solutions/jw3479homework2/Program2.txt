@@ -1,0 +1,4 @@
+1. the enqueue only calls push to the stack in, so the running time is O(1)
+2. the dequeue operation is O(1) when the out stack is not empty
+   and when the out stack is empty, it will push the whole in stack into the 
+   out stack so the running time will be O(N)

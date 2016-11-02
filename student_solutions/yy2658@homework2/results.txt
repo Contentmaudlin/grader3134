@@ -1,0 +1,15 @@
+RUNNING 85 TESTS ON yy2658@homework2
+
+ TEST1.java
+Unbalanced! The first unbalanced symbol is: 
+*/ TEST2.java
+Unbalanced! The first unbalanced symbol is: 
+{ TEST3.java
+Success!
+ TEST4.java
+Unbalanced! The first unbalanced symbol is: 
+{ TEST5.java
+Unbalanced! The first unbalanced symbol is: 
+} TEST6.java
+Unbalanced! The first unbalanced symbol is: 
+"

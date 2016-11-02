@@ -1,0 +1,4 @@
+Big-O running time for enqueue is O(1)
+Big-O running time for dequeue is O(n), because one needs to traverse through all the elements 
+so as to move it from stack1 to stack2 before taking the first element out and needs to put the rest of elements 
+back to stack1 after taking out the first element.

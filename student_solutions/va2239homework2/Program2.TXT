@@ -1,0 +1,33 @@
+Name: Victor Au
+UNI: va2239
+COMS W3134
+
+Homework #2
+Programming Problem #2c
+
+"In a file called Program2.txt, discuss the big-O running time of the enqueue and dequeue operation for your queue implementation."
+
+----------
+
+ENQUEUE OPERATION'S RUNNING TIME, O(1):
+
+The code for TwoStackQueue's enqueue method consists of just stack1.push(x). It utilizes MyStack's push method, which basically uses the LinkedList class's addFirst method. The LinkedList class's addFirst method has a O(1) running time. It's a linked list, so adding something to the front of the list just means you reassign the "next" and "previous" fields of the inserted element, the "previous" field of the original first element, and the "next" field of the head sentinel node. This all means that my queue implementation's enqueue operation has a big-O running time of O(1).
+
+----------
+
+DEQUEUE OPERATION'S RUNNING TIME, O(N):
+
+The code for TwoStackQueue's dequeue method is a little more complex. It consists of three steps before returning the element to be removed from the queue:
+1. transferStackElements(stack1, stack2)
+2. returnElement = stack2.pop()
+3. transferStackElements(stack2, stack1)
+
+The first step uses transferStackElements to transfer the elements in stack1 to stack2, and this is O(N). transferStackElements takes in two stacks for its arguments, firstStack and secondStack. It uses one while loop: while firstStack has at least one element, it pops firstStack and then pushes that popped element to secondStack. MyStack's push and pop methods use the LinkedList class's addFirst and removeFirst methods, respectively; they are both O(1) methods. Therefore, for each iteration of the while loop (while firstStack has at least one element), the running time is O(1).
+
+Until firstStack is empty, the computer will keep on popping firstStack and pushing those elements to secondStack. This means that transferStackElements's while loop has a running time of O(N). (If firstStack is empty, nothing happens; however, as the number of elements in firstStack increases, the running time increases linearly.)
+
+The second step has a O(1) running time. MyStack's pop method is O(1), and assigning the returned element to returnElement is also O(1).
+
+The third step uses transferStackElements to transfer the elements in stack2 back to stack1. Like the first step, this involves a linear running time of O(N).
+
+Without being too detailed, TwoStackQueue's dequeue method essentially has a running time of around O(N) + O(1) + O(N), which are the big-O running times for the three steps. We take the maximum to determine the running time. In conclusion, my queue implementation's dequeue operation has a big-O running time of O(N).

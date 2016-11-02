@@ -1,0 +1,6 @@
+Sunand Iyer 
+sri2117
+
+In the queue implementation, the big-O runtime for the enqueue operation is O(1). 
+
+The worst case big-O runtime for the dequeue operation is O(N). This is when all the elements from S1 have to be moved to S2 (in the case S2 is empty). The isEmpty and pop methods are both O(1) so they do not affect the runtime of this operation since they are less than O(N). In the case that the output stack is not empty, the runtime is O(1) because all that is done is popping the top element of S2. Since big-O notation generally means the worst case scenario, the run time is O(N). 

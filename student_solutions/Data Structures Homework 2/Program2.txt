@@ -1,0 +1,30 @@
+In a file called Program2.txt, discuss the big-O running time of the enqueue and dequeue operation for your queue implementation.
+
+	public void enqueue(AnyType x) {
+		S1.push(x);
+		size++;
+	}
+	
+Big-O running time is a constant for pushes. It is also a constant for the operation size++. So the enqueue operation will measure at O(1).
+
+
+	public AnyType dequeue(){
+		if (S2.isEmpty()) {
+			while (!S1.isEmpty()) {
+				AnyType x = S1.pop();
+				S2.push(x); //S2 takes as input S1's values
+			}
+		} 
+		size --;
+		return S2.pop();	
+	}
+
+The worst case scenario for dequeue is:
+- the running of the first if loop. O(1)
+- the running of the first while loop, the worst case scenario for that being that all of S1 is full. O(n)
+- the pop operation. O(1)
+- the push operation. O(1)
+- the decrementing of size. O(1)
+- the returning of s2.pop(). O(1)
+
+Overall, this means dequeue is of order O(n).

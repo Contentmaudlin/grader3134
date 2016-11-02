@@ -1,0 +1,8 @@
+Name: Tianwu Wang
+UNI:tw2576
+
+
+
+We are basically adding and removing elements at the end of a list.
+Since adding and removing at the end of a list both have O(1) running time,
+big-O running time of the enqueue and dequeue operation are both O(1).

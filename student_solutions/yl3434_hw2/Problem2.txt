@@ -1,0 +1,9 @@
+Name: Marie Lian
+UNI: yl3434
+Date: 10/10
+Assignment: HW2
+
+Discuss the big-O running time of the enqueue and dequeue operation for your queue implementation
+
+Big-o running time of my enqueue is O(1) since it is just .push(x).
+My dequeue is O(N) because if stack 2 is empty, then the method copies stack 1 elements over to stack 2 by popping and pushing, in order to pop from it. So the act of copying it over makes it O(N)

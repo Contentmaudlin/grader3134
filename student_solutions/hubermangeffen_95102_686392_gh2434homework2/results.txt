@@ -1,0 +1,17 @@
+RUNNING 85 TESTS ON hubermangeffen_95102_686392_gh2434homework2
+
+ TEST1.java
+I am sorry. Your file is unbalanced.
+You have an unmatched open curly bracket
+ TEST2.java
+I am sorry. Your file is unbalanced.
+You have an unmatched open curly bracket
+ TEST3.java
+Congratulations. Your file is balanced!
+ TEST4.java
+ TEST5.java
+I am sorry. Your file is unbalanced.
+You have an unmatched close curly bracket
+ TEST6.java
+I am sorry. Your file is unbalanced.
+You have an unmatched quotation

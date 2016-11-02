@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON zeg2103homework2
+
+ TEST1.java
+Unbalanced! ) is mismatched!
+ TEST2.java
+Unbalanced! { is mismatched!
+ TEST3.java
+All symbols are balanced!
+ TEST4.java
+Unbalanced! ) is mismatched!
+ TEST5.java
+Unbalanced! } is mismatched!
+ TEST6.java
+Unbalanced! " is mismatched.

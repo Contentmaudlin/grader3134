@@ -1,0 +1,291 @@
+Jack Ricci
+jr3663
+Dr. Paul Blaer
+COMS W3134
+9/30/16
+
+                        Assignment 2: Written
+
+Problem 1:
+*Below is the code for the printLots method that would be used to print the values in List L that have matching index
+positions with the values in list P. The only additional action that would need to be performed to utilize this method
+would be to form the two Lists, L and P, and then call the method in the main with the line:
+
+printLots(L, P);
+
+Here is the method:
+
+public static <AnyType> void printLots(java.util.List<AnyType> l, java.util.List<Integer> p){
+
+        java.util.Iterator<Integer> pItr = p.iterator();
+        java.util.Iterator<AnyType> lItr = l.iterator();
+
+        int lIndx = 0;
+        AnyType lval;
+        Integer pval;
+
+        //Iterate over each element in List P
+        while(pItr.hasNext()){
+            pval = pItr.next();
+
+            //Skip over negative integers in P because those index positions don't exist in List L
+            while(pval < 0){
+                if(pItr.hasNext()) {
+                    pval = pItr.next();
+                }else{
+                    System.out.println("There are no non-negative integer values in list p");
+                    return;
+                }
+            }
+
+            //Iterate through List L until you reach the index position
+            //If index position is not reached, return because the method has concluded
+            while(lIndx < pval){
+                if(lItr.hasNext()){
+                    lItr.next();
+                    lIndx++;
+                }else{
+                    System.out.println("The list does not have index position " + pval);
+                    return;
+                }
+            }
+
+            //Index postion has been reached, print the element in L at that position
+            lval = lItr.next();
+            System.out.println("The value at L's index position " + pval + " is " + lval);
+            lIndx++;
+        }
+    }
+
+
+*This method can handle situations where:
+  - one or more of the elements in List P is a negative integer
+  - one or more of the elements in List P is a greater integer value than the size of List L
+
+
+Problem 2:
+ *The below code will find the intersection between any two lists of the same type, using only methods contained within
+ the list interface. The run time of this method is defined by the number of times that the while loop must iterate.
+ The while loop iterates until the last element in both the l list and the p list have been reached. Therefore, assuming
+ both lists are of length n, the while loop will iterate n+n = 2n times. Each operation inside of the while loop is a
+ constant time operation, so the run time is on the order of 2n times and therefore O(n). The javaDoc comments
+ in the method code help to clarify how the method works and how its components impact the overall run time:
+
+ public static <AnyType extends Comparable<AnyType>> void
+ listIntersect(java.util.List<AnyType> l, java.util.List<AnyType> p) {
+
+         /**Create list iterator for both lists */
+         java.util.ListIterator<AnyType> lItr = l.listIterator();
+         java.util.ListIterator<AnyType> pItr = p.listIterator();
+
+         /**Initialize lval and pval to first value in l and p */
+         AnyType lval = lItr.next();
+         AnyType pval = pItr.next();
+
+         /**Iterate through lists until the last element of each list
+          * remains. For each iteration, compare the current l element
+          * with the current p element. If they are equal, print the element.
+          * If the value from the p list is smaller, set pval equal to the next value
+          * in the p list
+          * If the value from the l list is smaller, set lval equal to the next value
+          * in the l list
+           */
+         while(lItr.hasNext() || pItr.hasNext()){
+             if(lval.compareTo(pval) > 0){
+                 if(pItr.hasNext()) {
+                     pval = pItr.next();
+                 }else{
+                     return;
+                 }
+             }else if(lval.compareTo(pval) < 0){
+                 if(lItr.hasNext()) {
+                     lval = lItr.next();
+                 }else{
+                     return;
+                 }
+             }else{
+                 System.out.println(lval);
+                 AnyType prevLval = lval;
+                 AnyType prevPval = pval;
+
+                 /**
+                  * In order to prevent double counting elements in the
+                  * intersection, the below code checks the next value in each
+                  * list, ensures that it is not equivalent to the previous
+                  * value in its respective list, and then exits the conditional
+                  * A while loop is used to iterate through the lists until the current value
+                  * in the list is different from the value that was just printed.
+                  * Often, a while loop inside of a while loop will yield an O(N^2) run time
+                  * However, the below while loop actually works hand in hand with its parent
+                  * while loop. Any time that the below while loop iterates, that is one less iteration
+                  * that the parent while loop must do. Therefore, the method remains O(N).
+                  */
+                 if(lItr.hasNext() && pItr.hasNext()){
+                     lval = lItr.next();
+                     pval = pItr.next();
+
+                     while(lval == prevLval && pval == prevPval){
+                         if(lItr.hasNext() && pItr.hasNext()){
+                             prevLval = lval;
+                             prevPval = pval;
+
+                             lval = lItr.next();
+                             pval = pItr.next();
+                         }else{
+                             return;
+                         }
+                     }
+                 }else{
+                     return;
+                 }
+             }
+         }
+
+         /**
+          * When there is only one element left in both lists, the remaining two elements
+          * are compared and the element is printed if it is the same in both lists.
+          */
+         if((lval.compareTo(pval)) == 0) {
+             System.out.println(lval);
+         }
+     }
+
+
+Problem 3:
+     *The below code would efficiently build two stacks within just one array when it is instantiated.
+     The DualStacks constructor will build the two stacks of AnyType. The top of stack one is initialized as the index
+     position -1, and the top of stack two is initialized as the index position equal to the array's length.
+     The isEmpty method is used to determine whether or not a stack can be popped.
+
+     *The DualStacks class maintains efficient usage of the array by initially placing the top of the first stack at
+      just before the first index position of the array and the top of the second stack right after the last index
+      position of the array. The top of each stack is then adjusted based upon whether or not it has been pushed
+      or popped, with the top of stack 1 moving to a greater index position on a push and the top of stack 2 moving
+      to a smaller index position on a push. If the top of each stack would be at the same index position after a push,
+      stack overflow is declared because there are no free positions left in the array and the the push is not
+      allowed to occur.
+
+     *Two constructors are available for this class. The first constructor does not accept formal parameters,
+     so if it is called, the size variable for the array's size is set to the default value of 10. The second
+     constructor accepts an integer value that will set the size of the array that holds the stacks to whatever
+     value is passed to the constructor as an argument.
+
+     Below is the code with comments to help guide the logic:
+
+public class DualStacks<AnyType>{
+    private int topOfStackOne, topOfStackTwo;
+    private int size;
+    private static final int DEFAULT_SIZE = 10;
+
+    //Array variable declared
+    private AnyType[] arr;
+
+    //Constructor without argument sets size of array to default size, initializes array and top of stacks
+    public DualStacks (){
+        size = DEFAULT_SIZE;
+        arr = (AnyType[]) new Object[size];
+        topOfStackOne = -1;
+        topOfStackTwo = arr.length;
+    }
+
+    //Constructor with argument sets size of array to argument value, initializes array and top of stacks
+    public DualStacks (int passedSize){
+        size = passedSize;
+        arr = (AnyType[]) new Object[size];
+        topOfStackOne = -1;
+        topOfStackTwo = arr.length;
+    }
+
+    //Push Stack One, give error if stacks cross
+    public void pushOne(AnyType x){
+        topOfStackOne++;
+        if(topOfStackOne == topOfStackTwo){
+            System.out.println("Stack Overflow error");
+            topOfStackOne--;
+            return;
+        }else{
+            arr[topOfStackOne] = x;
+            System.out.println("Just pushed " + arr[topOfStackOne] + " to stack 1 at position " + topOfStackOne);
+        }
+    }
+
+    //Pop Stack One if it is not an empty stack
+    public AnyType popOne(){
+        if(!isEmpty(topOfStackOne)) {
+            AnyType popVal = arr[topOfStackOne];
+            topOfStackOne--;
+            System.out.println("Pop " + popVal);
+            return popVal;
+        }else{
+            System.out.println("Empty Stack1 cannot be popped");
+            return null;
+        }
+    }
+
+    //Push Stack Two, give error if stacks cross
+    public void pushTwo(AnyType x){
+        topOfStackTwo--;
+        if(topOfStackTwo == topOfStackOne){
+            System.out.println("Stack Overflow error");
+            topOfStackTwo++;
+            return;
+        }else{
+            arr[topOfStackTwo] = x;
+            System.out.println("Just pushed " + arr[topOfStackTwo] + " to stack 2 at position " + topOfStackTwo);
+        }
+    }
+
+    //Pop Stack Two if it is not an empty stack
+    public AnyType popTwo(){
+        if(!isEmpty(topOfStackTwo)) {
+            AnyType popVal = arr[topOfStackTwo];
+            topOfStackTwo++;
+            System.out.println("Pop " + popVal);
+            return popVal;
+        }else{
+            System.out.println("Empty Stack2 cannot be popped");
+            return null;
+        }
+    }
+
+    //Determine if the stack that the user is trying to pop is empty
+    public boolean isEmpty(int topOfStack){
+        if(topOfStack == -1 || topOfStack == arr.length){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+Problem 4:
+The following steps would solve the train shunting problem:
+1.) Train 4 moves from the front of the input track to the top of S3
+2.) Train 3 moves from the front of the input track to the top of S3
+3.) Train 1 moves from the front of the input track to the back of the output track
+4.) Train 8 moves from the front of the input track to the top of S2
+5.) Train 2 moves from the front of the input track to the back of the output track
+6.) Train 3 moves from the top of S3 to the back of the output track
+7.) Train 4 moves from the top of S3 to the back of the output track
+8.) Train 7 moves from the front of the input track to the top of S2
+9.) Train 6 moves from the front of the input track to the top of S2
+10.) Train 9 moves from the front of the input track to the top of S1
+11.) Train 5 moves from the front of the input track to the back of the output track
+12.) Train 6 moves from the top of S2 to the back of the output track
+13.) Train 7 moves from the top of S2 to the back of the output track
+14.) Train 8 moves from the top of S2 to the back of the output track
+15.) Train 9 moves from the top of S1 to the back of the output track
+
+* A train with cars arranged in the following order (left to right) could not be
+rearranged in increasing order (rightmost position being lowest value) using only
+three holding tracks:
+
+1 2 3 4 9 8 7 6 5
+
+1.) The 5 car must take one of the holding tracks (say S1)
+2.) The 6 car must take one of the holding tracks, but not S1 because that would
+terminally render the 5 and 6 car to be out of order. We will place the 6 car on S2.
+3.) The 7 car must take one of the holding tracks, but not S1 or S2 because either holding
+track would terminally render the 7 car out of order with either the 5 or the 6 car
+4.) The 8 car would then not be able to move to any holding track or the output track in
+a way that would ensure that proper order will be preserved.

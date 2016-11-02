@@ -1,0 +1,8 @@
+RUNNING 85 TESTS ON wl2536Homework2
+
+ TEST1.java
+ TEST2.java
+ TEST3.java
+ TEST4.java
+ TEST5.java
+ TEST6.java

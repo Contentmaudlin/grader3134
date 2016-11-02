@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON jad2267homework2
+
+ TEST1.java
+Error: imbalanced closing comment block: */
+ TEST2.java
+Error: file ends with unclosed opening symbols. First unmatched symbol: {
+ TEST3.java
+Checked symbols are properly balanced.
+ TEST4.java
+Error: mismatched symbol )
+ TEST5.java
+Error: imbalanced symbol: }
+ TEST6.java
+Error: quote indicating string (") remains unclosed throughout the file.

@@ -1,0 +1,12 @@
+RUNNING 85 TESTS ON gam2138homework2
+
+ TEST1.java
+Unbalanced! Symbol )s is mismatched.
+ TEST2.java
+ TEST3.java
+Program is balanced
+ TEST4.java
+Unbalanced! Symbol )s is mismatched.
+ TEST5.java
+Closed symbol w/o opening symbol
+ TEST6.java

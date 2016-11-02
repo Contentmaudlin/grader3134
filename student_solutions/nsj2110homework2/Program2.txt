@@ -1,0 +1,5 @@
+Nicole Javorsky 
+nsj2110
+
+The Big O runtime of the enqueue operation is O(1).
+The Big O runtime of the dequeue operation is O(N) because with if else statements we take the larger Big O cost. In the else statement we are pushing the elements of one stack to another stack, popping one element, then pushing the elements of one stack to another stack. This is N + N + a constant which is 2N, but in terms of big O that's O(N).

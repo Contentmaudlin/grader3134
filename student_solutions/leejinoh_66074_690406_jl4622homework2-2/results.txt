@@ -1,0 +1,20 @@
+RUNNING 85 TESTS ON leejinoh_66074_690406_jl4622homework2-2
+
+ TEST1.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch
+ TEST2.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch
+ TEST3.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch
+ TEST4.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch
+ TEST5.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch
+ TEST6.java
+Unbalanced! Brackets { } are mismatched
+{ mismatch

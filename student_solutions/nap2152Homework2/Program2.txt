@@ -1,0 +1,6 @@
+Big-O running time of enqueue and dequeue:
+Enqueue :
+In best case, which occurs when stack 2 is empty, the running time of enqueue is 1, because it simply pushes the item to stack 1. In worst case, when there are items in stack 2, the running time of enqueue is n, where n is the number of items in stack 2. This is because for each item in stack 2, the enqueue method pushes them to stack 1 and pops them from stack 2 simultaneously, and then pushes the item to stack 1. Since Big-O run time is the worst case, the Big-O of enqueue is O(n).
+
+Dequeue :
+In best case, which occurs when stack 1 is empty or the two stack queue is empty, the running time of dequeue is 1 because it either pops the top of stack 2, or it returns null. In worst case, where there are items in stack 1, the running time of dequeue is n, where n is the number of items in stack 1. This is because each item but the last in stack 1 is popped from stack 1 and pushed to stack 2, with the last item in stack 1 being popped and returned. Therefore, the Big-O run time for dequeue is O(n).

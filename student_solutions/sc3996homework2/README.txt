@@ -1,0 +1,3 @@
+README
+Name:Shuqi Chen
+UNI:sc39961. Programming 1in terminal, you are expected to type in:javac SymbolBalance.javaand then:java SymbolBalance Test.java(or whatever java file you want to check)This program should return the first unbalanced symbols detected in the file or “balance” if no mismatch has been detected. It will return exception if the file is not found or the file is not valid2. Programming 2in terminal, you are expected to type in:javac Program2.java (or whatever tester.java you want to test)and then:java Program2 (or whatever tester you want to test)For Program2, it should return:013234567

@@ -1,0 +1,284 @@
+Anh Phung
+adp2161
+Homework 2
+
+1. Problem 1:
+
+public <AnyType> void printLots(List<AnyType> L, List<Integer> P)
+{
+    // initiate iterator
+    java.util.Iterator<AnyType> itrL = L.iterator();
+    java.util.Iterator<Integer> itrP = P.iterator();
+    int current = -1;
+    int pos;
+    
+    
+    // finding positions from P 
+    while (itrP.hasNext())
+    {
+	pos = itrP.next();
+	AnyType item = null;
+	boolean print = false;
+
+	// get to that position on L
+	for (int i = 0; i < pos - current; i++)
+	{
+	    if (itrL.hasNext())
+	    {
+		item = itrL.next();
+		print = true;
+	    }
+	    else
+	    {
+		print = false;
+	    }
+	}
+	
+	// print if there is an item 
+	if (print)
+	{
+	    current = pos;
+	    System.out.println(item + “ “);
+	}
+	else
+	    System.out.println(“No item at this position”);
+    }
+}
+
+
+2. Problem 2 - Weiss 3.4:
+
+public List<AnyType> intersect(List<AnyType> L1, List<AnyType> L2)
+{
+    // initiate iterator
+    java.util.Iterator<AnyType> itrL1 = L1.iterator();
+    java.util.Iterator<AnyType> itrL2 = L2.iterator();
+    List<AnyType> intersection = new ArrayList<AnyType>();
+
+    // get the first elements of each list
+    if (itrL1.hasNext() && itrL2.hasNext())
+    {
+        AnyType L1pos = itrL1.next();
+        AnyType L2pos = itrL2.next();
+    }
+    else
+    {
+        return intersection;
+    }
+
+    // looping through to find common elements
+    while (L1pos != null && L2pos != null)
+    {
+        if (L1pos.compareTo(L2pos) > 0)
+        {
+            if (itrL2.hasNext())
+                L2pos = itrL2.next();
+            else
+                L2pos = null;
+        }
+        else if (L1pos.compareTo(L2pos) < 0)
+        {
+            if (itrL1.hasNext())
+                L1pos = itrL1.next();
+            else
+                L1pos = null;
+        }
+        else
+        {
+            intersection.add(L1pos);
+            if (itrL1.hasNext())
+                L1pos = itrL1.next();
+            else
+                L1pos = null;
+            if (itrL2.hasNext())
+                L2pos = itrL2.next();
+            else
+                L2pos = null;
+        }
+    }
+
+
+    // removing repeated elements in intersection
+    for (int i = 0; i < intersection.size()-1; i ++)
+    {
+        AnyType first = intersection.get(i);
+        AnyType second = intersection.get(i+1);
+        if (first.compareTo(second) == 0)
+        {
+            intersection.remove(first);
+            i --;
+        }
+    }
+
+    // return the intersection
+    return intersection;
+}
+
+
+3. Problem 3 - Weiss 3.24:
+
+
+public class TwoStackArray<AnyType>
+{
+    // private variables
+    private AnyType[] theArray;
+    private int size;
+    private int top1;
+    private int top2;
+
+    
+    // constructor 
+    public TwoStackArray(int size)
+    {
+       	theArray = (AnyType[]) new Object[size];
+	this.size = size;
+	top1 = -1;
+	top2 = size;
+    }
+
+
+    // default constructor
+    public TwoStackArray()
+    {
+       	theArray = (AnyType[]) new Object[100];
+	this.size = 100;
+	top1 = -1;
+	top2 = 100;
+    }
+
+    
+    // push into stack 1
+    public void push1(AnyType x)
+    {
+	if (top1 + 1 < top2)
+	{
+	    top1 ++;
+	    theArray[top1] = x;
+	}
+	else
+	{
+	    throw new ArrayOverflowException("Array is full.");
+	}
+    }
+
+    
+    // pop from stack 1
+    public AnyType pop1()
+    {
+	if (isEmpty1())
+	    return null;
+	else
+	{
+	    AnyType item = theArray[top1];
+	    top1 --;
+	    return item;
+	}
+    }
+
+
+    // peek at stack 1
+    public AnyType peek1()
+    {
+	if (isEmpty1())
+	{
+	    return null;
+	}
+	else
+	{
+	    return theArray[top1];
+	}
+    }
+
+
+    // check if stack 1 is empty
+    public boolean isEmpty1()
+    {
+	return top1 == -1;
+    }
+
+
+    // return the size of stack 1
+    public int size1()
+    {
+	return top1 + 1;
+    }
+
+
+    // push into stack 2
+    public void push2(AnyType x)
+    {
+	if (top2 - 1 > top1)
+	{
+	    top2 —-;
+	    theArray[top2] = x;
+	}
+	else
+	{
+	    throw new ArrayOverflowException("Array is full.");
+	}
+    }
+
+
+    // pop from stack 2
+    public AnyType pop2()
+    {
+	if (isEmpty2())
+	    return null;
+	else
+	{
+	    AnyType item = theArray[top2];
+	    top2 ++;
+	    return item;
+	}
+    }
+
+
+    // peek at stack 2
+    public AnyType peek2()
+    {
+	if (isEmpty2())
+	    return null;
+	else
+	{
+	    return theArray[top2];
+	}
+    }
+
+
+    // check if stack 2 is empty
+    public boolean isEmpty2()
+    {
+	return top2 == size;
+    }
+
+    
+    // return the size of stack 2
+    public int size2()
+    {
+	return size - top2;
+    }
+}
+
+
+4. Problem 4:
+a)
+Step 1:  Move car 4 from input track to S1
+Step 2:  Move car 3 from input track to S1
+Step 3:  Move car 1 from input track to output track
+Step 4:  Move car 8 from input track to S2
+Step 5:  Move car 2 from input track to output track
+Step 6:  Move car 3 from S1 to output track
+Step 7:  Move car 4 from S1 to output track
+Step 8:  Move car 7 from input track to S2
+Step 9:  Move car 6 from input track to S2
+Step 10: Move car 9 from input track to S1
+Step 11: Move car 5 from input track to output track
+Step 12: Move car 6 from S2 to output track
+Step 13: Move car 7 from S2 to output track
+Step 14: Move car 8 from S2 to output track
+Step 15: Move car 9 from S1 to output track
+
+b)
+9 8 7 6 1 5 4 3 2 
+(with 9 at the back and 2 at the front)
+

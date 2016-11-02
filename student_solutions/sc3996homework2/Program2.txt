@@ -1,0 +1,15 @@
+Program2
+Big-O running time analysis
+1. enqueue:
+stack1.push(i)//constant
+Hence its running time is constant, so the big-O of it is O(1)
+
+2. dequeue:
+if (isEmpty()) {
+ throw new NoSuchElementException (blabla); //constant
+}
+else if (stack2.isEmpty()) { 
+ moveStack1ToStack2(); //n: size of stack1
+}
+return stack2.pop(); //constant
+Hence its running time is O(n), in which n refers to the size of stack1

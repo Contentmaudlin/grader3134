@@ -1,0 +1,6 @@
+Akbota Toxanbayeva 
+at3017
+
+In case of dequeue, in the worst case all the element have to be popped from  one of the stacks, pushed into the other and then the top element has to be popped out. Thus the order of dequeue is O(n)
+
+The enqueue operation involves pushing an element into one of the stacks which is O(1)

@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON jb3495homework2
+
+ TEST1.java
+Please enter the name of the file you would like to be checked.
+ TEST2.java
+Please enter the name of the file you would like to be checked.
+ TEST3.java
+Please enter the name of the file you would like to be checked.
+ TEST4.java
+Please enter the name of the file you would like to be checked.
+ TEST5.java
+Please enter the name of the file you would like to be checked.
+ TEST6.java
+Please enter the name of the file you would like to be checked.

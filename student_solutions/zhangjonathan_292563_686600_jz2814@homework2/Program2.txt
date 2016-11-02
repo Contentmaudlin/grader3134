@@ -1,0 +1,13 @@
+Enqueue:
+O(1): Adding an element simply pushes that element to the front of the stack. In a LinkedList implementation of the
+Stack, this operation can be done in constant time by simply switching pointers around
+
+Dequeue:
+O(n) - in worst case
+O(1) - in best case
+
+O(n) - if stack2, the output stack, is empty, then every element from stack1, the input stack, must first be popped and
+pushed onto the output stack. This operation takes constant time for every element of stack1, hence O(n)
+
+O(1) - if the stack2 is not empty, then the dequeue operation simply involves popping the top of element of stack2
+- which can be accomplished in constant time.

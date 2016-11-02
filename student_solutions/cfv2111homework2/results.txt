@@ -1,0 +1,15 @@
+RUNNING 6 TESTS ON cfv2111homework2
+
+ TEST1.java
+***********
+File not found
+ 
+ TEST2.java
+***********
+The file has imbalanced { parenthesis
+ 
+ TEST3.java
+***********
+ 
+ TEST4.java
+***********

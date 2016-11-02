@@ -1,0 +1,26 @@
+RUNNING 6 TESTS ON DS3441_PS2
+
+ TEST1.java
+***********
+Unbalanced! Symbol */ needs an opening symbol.
+ 
+ TEST2.java
+***********
+Unbalanced! Symbol { needs to be closed.
+ 
+ TEST3.java
+***********
+Balanced!
+ 
+ TEST4.java
+***********
+Unbalanced! Symbol ) is mismatched.
+ 
+ TEST5.java
+***********
+Unbalanced! Symbol } needs an opening symbol.
+ 
+ TEST6.java
+***********
+Unbalanced! Symbol "needs to be closed
+ 

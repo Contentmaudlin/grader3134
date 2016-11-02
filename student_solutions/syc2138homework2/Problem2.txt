@@ -1,0 +1,81 @@
+Sharon Chen syc2138 10/2/16
+Homework 2
+
+ENQUEUE
+
+/**
+ * Performs the enqueue operation.
+ * @param x the item to enqueue
+ */
+public void enqueue(E x)
+{
+    stack1.push(x);
+}
+
+/**
+ * Adds an element to the top of the stack.
+ * @param element the element to add to the stack.
+ */
+public void push(E element)
+{
+    stack.addFirst(element);
+}
+
+Enqueue involves one push. A push involves one addFirst. Adding an element to the front of a LinkedList, which is the underlying structure of MyStack, is O(1).
+Thus, Enqueue is O(1).
+
+
+DEQUEUE
+
+/**
+* Performs the dequeue operation.
+* @return the element that is dequeued, or null if empty queue
+*/
+public E dequeue()
+{
+    if (stack2.size() == 0)
+    {
+        while (stack1.size() > 0)
+        {
+            stack2.push(stack1.pop());
+        }
+    }
+    return stack2.pop();
+}
+
+/**
+ * Finds size of the stack.
+ * @return the size of the stack
+ */
+public int size()
+{
+    return stack.size();
+}
+
+/**
+ * Adds an element to the top of the stack.
+ * @param element the element to add to the stack.
+ */
+public void push(E element)
+{
+    stack.addFirst(element);
+}
+
+/**
+ * Removes and returns the topmost element in the stack.
+ * @return removed element, null if empty
+ */
+public E pop()
+{
+    if (stack.isEmpty())
+    {
+        return null;
+    }
+    else
+    {
+        return stack.removeFirst();
+    }
+}
+
+Dequeue invokes size multiple times. Each size invokation is O(1), and size can be invoked up to n times, so that already makes dequeue O(n). It invokes pop and push for almost every size invokation. Popping an element off of the front of a LinkedList invokes isEmpty, which is O(1), or removeFirst, which is also O(1). Adding an element to the front of a LinkedList is O(1).
+Thus, Dequeue is O(n * (1 + 1)), which is O(n).

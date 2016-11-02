@@ -1,0 +1,13 @@
+RUNNING 85 TESTS ON jt2870@homework2
+
+ TEST1.java
+ TEST2.java
+Unbalanced! Symbol { is mismatched
+ TEST3.java
+Success!
+ TEST4.java
+Unbalanced! Symbol ) is mismatched
+ TEST5.java
+Unbalanced! Symbol} is mismatched
+ TEST6.java
+Unbalanced! Symbol " is mismatched

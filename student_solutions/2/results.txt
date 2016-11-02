@@ -1,0 +1,29 @@
+RUNNING 6 TESTS ON 2
+
+ TEST1.java
+***********
+code is unbalanced in []
+code is unbalanced ()
+ 
+ TEST2.java
+***********
+code is unbalanced in {}
+ 
+ TEST3.java
+***********
+your code did not have imbalances!
+ 
+ TEST4.java
+***********
+code is unbalanced in []
+code is unbalanced ()
+ 
+ TEST5.java
+***********
+code is unbalanced in {}
+ 
+ TEST6.java
+***********
+your code is unbalanced with a quote missing
+code is unbalanced in {}
+ 

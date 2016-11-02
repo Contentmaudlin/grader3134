@@ -1,0 +1,46 @@
+RUNNING 6 TESTS ON at3017homework2
+
+ TEST1.java
+***********
+Unexpected )
+c void main(String[ ) args) {
+		String g
+File is not balanced
+ 
+ TEST2.java
+***********
+File is balanced
+ 
+ TEST3.java
+***********
+File is balanced
+ 
+ TEST4.java
+***********
+Unexpected )
+main(String[] ) args) {
+		String ghana =
+Unexpected ]
+se files */
+		String] ghana = ["1", "2",
+Unexpected }
+", "2", "3", "4"];
+	}
+
+
+
+IOException : java.lang.IndexOutOfBoundsException: Stack is empty
+ 
+ TEST5.java
+***********
+Unexpected }
+HappyAboutThis;
+
+	}
+
+IOException : java.lang.IndexOutOfBoundsException: Stack is empty
+ 
+ TEST6.java
+***********
+File is balanced
+ 

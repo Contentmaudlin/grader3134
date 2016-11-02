@@ -1,0 +1,8 @@
+Enqueue Big Oh Run time
+
+The run time for the enqueue method is O(N) in my instance. The stack sizes are declared before the TwoStackQueue method is created and each time the method is called it does not trigger a size rest of the stacks arrays.
+
+Dequeue Big Oh Run time
+
+The run time for this method is also O(N). Likewise the arrays in the stacks are not being resized. This does take longer since the entire inbox is pushed to the out box the first instance it is called. However this is simply the inbox’s array size which means it is multiplied by that number and it still becomes O(N) since this is a constant number.
+Contact GitHub API Training Shop Blog About

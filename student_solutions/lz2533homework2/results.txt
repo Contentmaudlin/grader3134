@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON lz2533homework2
+
+ TEST1.java
+please enter the file address:
+ TEST2.java
+please enter the file address:
+ TEST3.java
+please enter the file address:
+ TEST4.java
+please enter the file address:
+ TEST5.java
+please enter the file address:
+ TEST6.java
+please enter the file address:

@@ -1,0 +1,26 @@
+RUNNING 6 TESTS ON dlg2156_hw2
+
+ TEST1.java
+***********
+unbalanced symbol: )
+ 
+ TEST2.java
+***********
+unbalanced symbol: {
+ 
+ TEST3.java
+***********
+no symbol errors
+ 
+ TEST4.java
+***********
+unbalanced symbol: )
+ 
+ TEST5.java
+***********
+unbalanced symbol: }
+ 
+ TEST6.java
+***********
+unbalanced symbol: "
+ 

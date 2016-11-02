@@ -1,0 +1,25 @@
+///////////////////////////////////////////
+
+Maryam Aly 
+UNI: mya2114
+Proogramming Project 2 
+Programming question 2 
+Part C
+
+///////////////////////////////////////////
+
+
+For my enqueue, it is a simple push operation into the first stack (S1). As a result, 
+the Big-O time complexity is O(1).
+
+For my dequeue, there are two cases:
+
+1)       If the second stack (S2) is empty, then we need to copy all the elements in the 
+first stack (S1) to S2. This is the worst case that can happpen, and the Big-O 
+time complexity is O(n). 
+
+2)       If the second stack (S2) has elements, then it is a simple pop operation, where the 
+Big-O time complexity is O(1). 
+
+
+

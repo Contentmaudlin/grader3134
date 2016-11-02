@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON kd2602hw2
+
+ TEST1.java
+Error - symbol mismatch.  Last open: '[', received ')' at index 125.
+ TEST2.java
+Error - open symbols remaining.  Last open: {
+ TEST3.java
+Success!
+ TEST4.java
+Error - symbol mismatch.  Last open: '{', received ')' at index 130.
+ TEST5.java
+Error - closing symbol with no opening: '}' at index 536.
+ TEST6.java
+Error - open symbols remaining.  Last open: "

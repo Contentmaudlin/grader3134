@@ -1,0 +1,5 @@
+Program2
+
+The bigO running time for enqueue is just O(1). Since there is only one step that you add element to stack1.
+
+The bigO running time for dequeue is O(n). The worst case is that you need to push everything from stack1 to stack2 and the pop the last element from stack2,which may operate n times.  

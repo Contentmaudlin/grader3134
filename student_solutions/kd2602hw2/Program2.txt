@@ -1,0 +1,2 @@
+Programming Assignment #2.
+The run-time of the enqueue and dequeue operations is O(N).  Best case they operate at O(1), if all the elements happen to already be on the correct stack (S1 for enqueue and S2 for dequeue).  Worst case they operate at O(N), if all the elements are on the other stack, and you have to move N elements from one stack to the other before performing the queue operation.

@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON lernerbrechermatthew_291566_689588_mel2196homework2
+
+ TEST1.java
+Unbalanced! Symbol ) is mismatched
+ TEST2.java
+Unbalanced! Symbol { never matched
+ TEST3.java
+Balanced!
+ TEST4.java
+Unbalanced! Symbol ) is mismatched
+ TEST5.java
+Unbalanced! Symbol } never matched
+ TEST6.java
+Unbalanced! Symbol " never matched

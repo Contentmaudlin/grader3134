@@ -1,0 +1,102 @@
+QUESTION 1
+
+public static void printLots(int[] L, int[] P){
+	for(int i : P){
+		if (i < L.length){
+			System.out.println(L[i]);
+		}
+	}
+}
+
+
+
+
+QUESTION 2
+
+parameters given: Lists list1 and list2, want to find intersection of these two lists
+return type: List
+
+List<T> result = new ArrayList<T>();
+for (T elem : list1){
+	if (list2.contains(elem) && !result.contains(elem))
+		result.add(elem);
+}
+return result;
+
+
+
+
+QUESTION 3
+
+two stacks in one array: stack1 starts from index 0; the leftmost element.  stack2 starts from index n-1; the rightmost element.  The two stacks grow and shrink from the middle.
+methods used to implement two stacks in one array:
+
+instance variables:
+int size, top1, top2
+T[] stacks = (T[]) new Object[100];
+
+void push_stack1(T num){
+	if (top1 < top2 - 1){
+		top1++; // increase size of stack1
+		stacks[top1] = num; // add num onto the end of stack1
+	}else{
+		overflow, error!
+	}
+}
+
+void push_stack2(T num){
+	if (top2 > top1 + 1){
+		top2—-; // increase size of stack2
+		stacks[top2] = num; // add num onto the end of stack2
+	}else{
+		overflow, error!
+	}
+}
+
+T pop_stack1(){
+	if (top1 >= 0){
+		int last = arr[top1];
+		top1—-;
+		return last;
+	}else{
+		nothing to pop!
+	}
+	return 0;
+}
+
+T pop_stack2(){
+	if (top2 <= size - 1){
+		int last = arr[top2];
+		top2++;
+		return last;
+	}else{
+		nothing to pop!
+	}
+	return 0;
+}
+
+
+
+
+
+QUESTION 4
+
+(a)
+Move car 4 from the input track to S_1.
+Move car 3 from the input track to S_1.
+Move car 1 from the input track to the output track.
+Move car 8 from the input track to S_2.
+Move car 2 from the input track to the output track.
+Move car 3 from S_1 to the output track.
+Move car 4 from S_1 to the output track.
+Move car 7 from the input track to S_2.
+Move car 6 from the input track to S_2.
+Move car 9 from the input track to S_1.
+Move car 5 from the input track to the output track.
+Move car 6 from S_2 to the output track.
+Move car 7 from S_2 to the output track.
+Move car 8 from S_2 to the output track.
+Move car 9 from S_1 to the output track.
+
+(b)
+Note that since cars cannot be moved between holding tracks, and from a holding track a car can only go to the back of the output track, it is impossible to complete a rearrangement if, within a holding track, car number ever increases from bottom to top.  This would force the car with a higher number to go on the output track first, making the rearrangement invalid.  Now consider the 	cars on the input track in the following order: 1, 9, 8, 7, 6, 5, 4, 3, 2.

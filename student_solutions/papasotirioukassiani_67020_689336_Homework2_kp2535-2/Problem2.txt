@@ -1,0 +1,1 @@
+Since the enqueue operation just pushes one element onto the stack it is of order O(1).Since the dequeue operation on the worst case need the input stack copied over to the output stack it is of order O(n)

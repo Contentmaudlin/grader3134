@@ -1,0 +1,172 @@
+1. Problem 1
+
+public void printLots(List<Integer> L, List<Integer> P){
+		
+		Iterator<Integer> iterP = P.iterator();
+		Iterator<Integer> iterL = L.iterator();
+		
+		int indexCountL = 0;
+		if (iterP.hasNext()){
+		int nextIndex = iterP.next();}
+		while (iterL.hasNext()){
+			int nextL = iterL.next();
+			if (indexCountL == nextIndex){
+				System.out.println(nextL);
+				if (iterP.hasNext()){
+					nextIndex = iterP.next();
+				}
+			}
+			indexCountL++;
+		}
+	}
+
+2. Weiss 3.4:
+
+public void ListIntersection(List L1, List L2){
+
+<AnyType> List3 = new List<AnyType>();
+
+if (L1.hasNext()){
+	nextL1 = L1.next();}
+
+if (L2.hasNext()){
+	nextL2 = L2.next();}
+
+while nextL1 && nextL2 != null{
+
+	if (nextL1.compareTo(nextL2) == 0 && List3.contains(nextL1) == false){
+		List3.add(nextL1);
+		if (L1.hasNext()){
+			nextL1 = L1.next();}
+		else{
+			nextL1 = null;}
+		if (L2.hasNext()){
+			nextL2 = L2.next();}
+		else{
+			nextL2 = null;}
+
+	if (nextL1.compareTo(nextL2) > 0){
+		if (nextL2.hasNext()){
+			nextL2 = L2.hasNext();}
+	}
+
+	if (nextL2.compareTo(nextL1) < 0){
+		if (nextL1.hasNext()){
+			nextL1 = L1.hasNext();}
+	}
+
+2. Weiss 3.24:
+
+The basic premise of the algorithm is that, given an array of size x, we can implement one stack that fills in the even indexes and one that fills the odd indexes, and if one of the stacks wants to take up more than half of the array than it goes from the back of the array and can add elements up until the index at which the other array has already filled. We keep track of the number of 
+
+public class ArrayStack <AnyType>{
+
+	private int counter1;
+	private int counter2;
+	private int counterOddIndex;
+	private int counterEvenIndex;
+	private int counterEvenBackIndex;
+	private int counterOddBackIndex;
+	final <AnyType>[] myArray;
+
+	public MyStack(int x){
+
+		counter1 = 0;
+		counter2 = 0;
+		counterOddIndex = 1;
+		counterEvenIndex = 0;
+	if (x%2){
+		counterEvenBackIndex = x-2;
+		counter OddBackIndex = x-1;}
+	else{
+		counterEvenBackIndex = x-1;
+		counterOddBackIndex = x-2;}
+
+		myArray = new AnyType[x];}
+
+	public void pushStackOne(AnyType j){
+		
+		if (counter1 < x/2 && counterOddIndex <= counterOddBackIndex){
+			myArray[counterOddIndex] = j;
+			counterOddIndex = counterOddIndex + 2;
+			counter1++;}
+		else if (counter1 >= x/2 && counterEvenBackIndex != 0){
+			myArray[counterEvenBackIndex] = j;
+			counterEvenBackIndex = counterEvenBackIndex - 2;
+			counter1++;}
+		else{
+			throw{
+				StackOverflowError(“Stack overflow!!”);}
+	}
+
+	public void pushStackTwo(AnyType j){
+		
+		if (counter2 < x/2 && counterEvenIndex <= counterEvenBackIndex){
+			myArray[counterEvenIndex] = j;
+			counterEvenIndex = counterEvenIndex + 2;
+			counter2++;}
+		else if (counter2 >= x/2 && counterOddBackIndex != 1){
+			myArray[counterOddBackIndex] = j;
+			counterOddBackIndex = counterOddBackIndex - 2;
+			counter2++;}	
+		else{
+			throw{
+				StackOverflowError(“Stack Overflow!!”)}
+	}
+
+	public void popStackOne(){
+
+		if (counter1 <= x/2){
+			delete myArray[counterOddIndex-2];
+			counterOddIndex = counterOddIndex - 2;}
+		else {
+			delete myArray[counterEvenBackIndex+2];
+			counterEvenBackIndex = counterEvenBackIndex + 2;}
+			
+
+	public void popStackTwo(){
+		
+		if (counter2 <= x/2){
+			delete myArray[counterEvenIndex - 2];
+			counterEvenIndex = counterEvenIndex - 2;}
+		else{
+			delete myArray[counterOddBackIndex];
+			counterOddBackIndex = counterOddBackIndex + 2}
+
+	public AnyType topStackOne(){
+		
+		if (counter1 <= x/2){	
+			return myArray[counterOddIndex];}
+		else{
+			return myArray[counterEvenBackIndex];}
+
+	public AnyType topStackTwo(){
+	
+		if (counter2 <= x/2){
+			return myArray[counterEvenIndex];}
+		else{
+			return myArray[counterOddBackIndex];}
+		
+4. 
+Input track: [5, 9, 6, 7, 2, 8, 1, 3, 4]
+
+a)
+Push 4 on to S3.
+Push 3 on to S2 respectively. 
+Move 1 to the output track.
+Push 8 on to S1. 
+Move 2 to the output track.
+Move 3 from S2 to the output track.
+Move 4 from S3 to the output track.
+Push 7 on to S1. 
+Push 6 on to S1.
+Push 9 on to S2. 
+Move 5 to the output track.
+Move 6 from S1 to the output track.
+Move 7 from S1 to the output track.
+Move 8 from S1 to the output track.
+Move 9 from S2 to the output track.
+
+Tada!
+
+b) [6, 1, 2, 5, 4, 3, 9, 8, 7]

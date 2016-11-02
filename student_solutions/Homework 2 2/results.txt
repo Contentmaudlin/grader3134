@@ -1,0 +1,40 @@
+RUNNING 6 TESTS ON Homework 2 2
+
+ TEST1.java
+***********
+ 
+Unbalanced! Symbol [ is  mismatched
+ 
+ TEST2.java
+***********
+System is balanced.
+ 
+ TEST3.java
+***********
+ 
+Unbalanced! Symbol [ is mismatched
+ 
+Unbalanced! Symbol { is  mismatched
+ 
+Unbalanced! Symbol [ is mismatched
+ 
+ TEST4.java
+***********
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.LinkedList.removeFirst(LinkedList.java:270)
+	at MyStack.pop(MyStack.java:16)
+	at SymbolBalance.checkBalance(SymbolBalance.java:80)
+	at SymbolBalance.main(SymbolBalance.java:111)
+ 
+ TEST5.java
+***********
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.LinkedList.removeFirst(LinkedList.java:270)
+	at MyStack.pop(MyStack.java:16)
+	at SymbolBalance.checkBalance(SymbolBalance.java:73)
+	at SymbolBalance.main(SymbolBalance.java:111)
+ 
+ TEST6.java
+***********
+System is balanced.
+ 

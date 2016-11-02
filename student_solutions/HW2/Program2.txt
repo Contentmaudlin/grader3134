@@ -1,0 +1,5 @@
+big-O run time of enqueue operator:
+The enqueue operator is simply a push onto the first stack; this is simply adding to the end of a linked list —> this is an O(1) operation.
+
+big-O run time of dequeue operator:
+in the worst case, this may have to transfer the elements of the first stack to the second stack.  This is popping n elements from stack1 and pushing those n elements to stack2 —> ~2n, so O(n).  in the best case, stack2 is non-empty, so all it must do is pop from stack2, an O(1) operation.

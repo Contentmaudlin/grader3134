@@ -1,0 +1,40 @@
+Jack Ricci
+jr3663
+10/5/16
+Dr. Blaer
+
+                    Big-O Run Times of Enqueue and Dequeue
+
+*Enqueue:
+    - When enqueue is called, a conditional is immediately run.
+    - The conditional must determine whether or not Stack 2 is Empty, which is a constant time operation
+    - Based upon the result of the expression (whether or not Stack 2 is Empty), the conditional will either:
+        a) Push the argument to the top of Stack1, a constant time operation
+        b) Use a while loop to push each popped value of Stack 2 into Stack 1
+    - Clearly, path b is the more intensive route, so its run time should be evaluated
+    - Inside the while loop, the top value in stack 2 is popped (constant time operation) and then that value is
+      pushed to the top of stack 1 (also a constant time operation)
+    - This process inside of the while loop will be repeated for the length, n,  of the while loop, thus making the
+    total run time of the while loop O(n).
+    - Therefore, the Big O run time of the conditional is also O(n) and the run time of the enqueue method in total is
+    O(n)
+
+*Dequeue:
+    - The dequeue method's run time analysis follows almost the exact same trajectory as that of the enqueue method
+    - When dequeue is called, a conditional is immediately run.
+        -This first conditional must determine whether or not the queue is empty, which is a constant time operation
+    - The more time intensive result of the conditional is the "else" portion of the conditional, as it runs another
+     conditional, while the "then" portion simply prints an error message (constant time)
+        - The next conditional must determine whether or not Stack 1 is Empty, which is a constant time operation
+        - Based upon the result of the expression (whether or not Stack 1 is Empty), the conditional will either:
+            a) pop the top of Stack2, a constant time operation
+            b) Use a while loop to push each popped value of Stack 1 into Stack 2
+        - Clearly, path b is the more intensive route, so its run time should be evaluated
+        - Inside the while loop, the top value in stack 1 is popped (constant time operation) and then that value is
+          pushed to the top of stack 2 (also a constant time operation)
+        - This process inside of the while loop will be repeated for the length, n,  of the while loop, thus making the
+        total run time of the while loop O(n).
+        - Therefore, the Big O run time of the conditional is also O(n) and the run time of the dequeue method in total is
+        O(n)
+
+*Therefore, both the enqueue and dequeue methods for the Two Stack Queue are O(n) operations

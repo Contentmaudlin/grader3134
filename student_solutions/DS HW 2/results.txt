@@ -1,0 +1,26 @@
+RUNNING 6 TESTS ON DS HW 2
+
+ TEST1.java
+***********
+Unbalanced! Symbol ) is mismatched
+ 
+ TEST2.java
+***********
+Unbalanced! Symbol ] is mismatched
+ 
+ TEST3.java
+***********
+Unbalanced! Symbol ] is mismatched
+ 
+ TEST4.java
+***********
+Unbalanced! Symbol ] is mismatched
+ 
+ TEST5.java
+***********
+Unbalanced! Symbol ] is mismatched
+ 
+ TEST6.java
+***********
+Unbalanced! Symbol ] is mismatched
+ 

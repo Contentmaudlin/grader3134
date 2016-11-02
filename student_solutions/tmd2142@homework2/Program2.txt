@@ -1,0 +1,21 @@
+Big-O running time for
+
+1. Enqueue 
+	public void enqueue(Object x) {
+        while(!s1.isEmpty())
+            s2.pushOn(s1.popOut());
+        T t = (T)x;
+        s1.pushOn(t);
+        while(!s2.isEmpty())
+            s1.pushOn(s2.popOut());
+    }
+
+==> O(n)  ( n is the size of s1 before calling enqeue)
+
+2. Dequeue
+	public Object dequeue() {
+        s2.pushOn(s1.popOut());
+        return s2.popOut() ;
+    }
+
+==> O(1) 

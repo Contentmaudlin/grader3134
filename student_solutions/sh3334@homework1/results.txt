@@ -1,0 +1,3 @@
+RUNNING 85 TESTS ON sh3334@homework1
+
+Student file doesn't exist / doesn't compile / wrong name

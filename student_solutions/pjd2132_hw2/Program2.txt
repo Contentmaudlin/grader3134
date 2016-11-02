@@ -1,0 +1,6 @@
+Peter Drake (pjd2132)
+Program2.txt
+
+For my queue implementation, enqueue has a O(n).  Enqueue uses MyStack’s push, pop, isEmpty. These three methods use LinkedList’s addFirst, getFirst, removeFirst, and size, which are all O(1).  Thus MyStack’s push and pop are O(1) as well. However, enqueue uses a while loop to make sure every element is transferred from stack2 to stack1, making enqueue O(n).
+
+Dequeue uses the same methods that enqueue uses and implements a very similar while loop, making dequeue O(n) also. The only additional features of dequeue is that it checks to see if is called an an empty queue and consequently throws an error. However, this is O(1). Thus, dequeue is O(n). 

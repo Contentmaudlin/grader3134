@@ -1,0 +1,45 @@
+RUNNING 6 TESTS ON cac2275-Homework2
+
+ TEST1.java
+***********
+ I am representing /* and */ by <>! 
+[[, {, (, [, ), ), {, ", ", (, ), }, (, ), {, }, }, >, <, >, <, >, <, >, <, >]
+the characters () are unbalanced! 
+the characters /* */ are unbalanced! 
+ 
+ TEST2.java
+***********
+ I am representing /* and */ by <>! 
+[{, {, (, [, ], ), {, (, ), {, {, }, (, ), {, }, }, <, >, <, >, <, >]
+ the characters < are unbalanced! 
+ 
+ TEST3.java
+***********
+ I am representing /* and */ by <>! 
+[{, (, [, ], ), {, (, ), }, {, [, {, [, }, ], (, ), {, }, }, <, >, <, <, >, <, >, <, <, >]
+the characters {} are unbalanced! 
+the characters [] are unbalanced! 
+the characters {} are unbalanced! 
+ the characters < are unbalanced! 
+ 
+ TEST4.java
+***********
+ I am representing /* and */ by <>! 
+[], {, (, [, ], ), ), {, ", ", (, ), }, (, ), {, }, (, ), {, ], [, ", ", ", ", ", ", ", ", ], }, }, <, >, <, >, <, >, <, >, <, >]
+the characters [] are unbalanced! 
+the characters () are unbalanced! 
+the characters [] are unbalanced! 
+the characters {} are unbalanced! 
+the characters {} are unbalanced! 
+ 
+ TEST5.java
+***********
+ I am representing /* and */ by <>! 
+[}, {, (, [, ], ), {, (, ), {, }, }, (, ), {, }, }, <, >, <, >, <, >]
+the characters {} are unbalanced! 
+ 
+ TEST6.java
+***********
+ I am representing /* and */ by <>! 
+[", {, (, [, ], ), {, (, ), }, (, ), {, ", }, }, <, >, <, >]
+ 

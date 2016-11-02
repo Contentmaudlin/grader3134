@@ -1,0 +1,309 @@
+Kendall Dabaghi
+KD2602
+
+1. private void printLots(List<T> L, List<Integer> P){
+
+        int currAmt = -1; // Stores current value held by P iterator
+        int prevAmt = 0; // Stores previous value held by P iterator
+        int toInc = 0;   // Stores "toIncrement" - difference between prev and curr P values
+        Iterator<T> itrL = L.iterator();
+        Iterator<Integer> itrP = P.iterator();
+
+        // Ensure that L has at least 1 value in it
+        if(itrL.hasNext()) {
+
+        	// Queue up the first value in L as elem
+            T elem=itrL.next();
+
+            // Ensure that P has a remaining value to extract from L
+            while(itrP.hasNext()) {
+
+                currAmt = itrP.next();
+                if(currAmt < 0) {
+                	// Requesting an index from L that is negative
+                    System.out.println("Invalid input, breaking");
+                    break;
+                }
+
+                // Distance to move L iterator from current value
+                toInc = currAmt - prevAmt;
+
+                for(int i = 1; i <= currAmt-prevAmt; i++) {
+                	// Attempt to iterate to next requested P value in L
+                    if(itrL.hasNext()) {
+                        elem = itrL.next();
+                        toInc--;
+                    }
+                }
+
+                // If toInc > 0, then did not make it all the way to next requested P index,
+                // meaning L does not have enough values to reach the index requested by P
+                if(toInc > 0 ) {
+                    System.out.println("Index requested larger than L, breaking");
+                    break;
+                }
+
+                // Set previous value in P equal to current value and print out elem
+                prevAmt = currAmt;
+                System.out.println(elem);
+
+            }
+
+
+        } else {
+            System.out.println("L is empty");
+        }
+
+    }
+
+
+2.     public static <T extends Comparable<? super T>> ArrayList<T> printIntersect(ArrayList<T> L1, ArrayList<T> L2) {
+
+        /*
+            Use two iterators that move across each list, and utilize Comparable's compareTo to make comparison.
+            
+            Since they are sorted, if one iterator's value is bigger than the other, then find the next value in
+            the other's iterator until it is equal to or greater than the first ierator's value.
+
+            If they are equal, add that iterator value to Intersect which stores the ArrayList of the intersection.
+
+            If the first is smaller, then continue incrementing the index of its iterator until it lies on a value
+            that is equal to or greater than the second iterator's value.
+
+            Continue this until you have reached the end of the lists, at which point you have examined all
+            the possible points of intersection.
+
+        */
+
+        ArrayList<T> intersect = new ArrayList<T>();
+        Iterator<T> itr1 = L1.iterator();
+        Iterator<T> itr2 = L2.iterator();
+        T L1Test;
+        T L2Test;
+
+        if(itr1.hasNext() && itr2.hasNext()) {
+            // Set the test values to compare from the iterators equal to the first value in each iterator
+            L1Test = itr1.next();
+            L2Test = itr2.next();
+
+            // Set up while loop to go through the iterators
+            while (itr1.hasNext() || itr2.hasNext()) {
+
+                // Begin by comparing the first list to the second
+                if(L1Test.compareTo(L2Test) > 0) {
+                    if(itr2.hasNext()) {
+                        // If it's greater and L2 has more values to examine, 
+                        // increment L2 since it is smaller than L1
+                        L2Test = itr2.next();
+                    } else {
+                        // If L1 is bigger than L2, and L2 has no more values, then there are no more
+                        // possible points of intersection and you can break
+                        break;
+                    }
+                } else if(L1Test.compareTo(L2Test) == 0) {
+
+                    // If they're equal, then add the point of intersection and increment the index of L2
+                    // (but not also L1)
+                    intersect.add(L1Test);
+                    if(itr2.hasNext()) {
+                        L2Test = itr2.next();
+                    } else {
+                        // If they're equal and you've reached the end of L2, you can break as there
+                        // are no further possible points of intersection
+                        break;
+                    }
+                } else {
+
+                    // In this case, L1 is smaller than L2, so go to the next value in its iterator
+                    // if it exists
+                    if(itr1.hasNext()) {
+                        L1Test = itr1.next();
+                    }
+                }
+
+            }
+        }
+        return intersect;
+    }
+
+
+3. public class StackArr <T extends Comparable<? super T>> extends Stack <T> {
+
+    /*
+
+        Use two counters for each stack on the array front1/back1 for stack1, and front2/back2 for stack2.
+        These track the indices of the front and back of each of the stacks on the array.
+        
+        Align the stacks so that one starts at the front of the array and goes backward,
+        and the other starts at the end of the array and goes forward. 
+        
+        When you push to stack1, check that there is room without overlapping with stack2, then
+        add it to the end of stack1.  When you push to stack2, check that there is room
+        without overlaping with stack1, then add it to the end of stack2 (the previous index 
+        in the array since stack2 works backwards).
+
+        When you pop from stack1, make sure the back1 is at least -1, meaning there is a value.  Then return
+        that value and decrement back1.
+
+        When you pop from stack2, make sure the back2 is less than the array size, meaning there is a value.
+        Then return that value and increment back2.
+
+        For searches, iterate over the usable part of the array (index 0 to back1 for stack1, and back2 up
+        to size-1 for stack2).  If you find the requested value, return the index.
+
+    */
+
+    private final static int DEFAULT_SIZE = 10;
+    private T doubleStack[];
+    private int front1;
+    private int back1;
+    private int front2;
+    private int back2;
+    private int arrSize;
+
+    public StackArr() {
+        this(DEFAULT_SIZE);
+    }
+
+    public StackArr(int size) {
+        doubleStack = (T[]) new Comparable[size];
+        back2 = size;
+        front2 = size;
+        back1 = -1;
+        front1 = -1;
+        arrSize = size;
+    }
+
+    // back1 tracks the index currently holding the last value in stack1.  If it's -1, that means the
+    // array is empty.  If it's 0, the first and only index holding a value is 0 etc.
+    private boolean empty1() {
+        return back1 == -1;
+    }
+
+    // Return the last value in stack1 using back1 to track
+    private T peek1() {
+        if(!empty1()) {
+            return doubleStack[back1];
+        } else {
+            return null;
+        }
+    }
+
+    // Return the last value in stack1 using back1 to track, and decrement back1
+    // after returning to effectively remove that value from the array 
+    private T pop1() {
+
+        if(!empty1()) {
+            back1--;
+            return doubleStack[back1+1];
+        }
+        else {
+            return null;
+        }
+
+    }
+
+    // Check that stack1 has room to add another value without overlapping with stack2.
+    // If so add, otherwise output "Overflow" 
+
+    private T push1(T item) {
+
+        if(back1+1 < back2) {
+            back1++;
+            doubleStack[back1] = item;
+        } else {
+            System.out.println("Overflow");
+        }
+        return item;
+
+    }
+
+    private int search1(T item) {
+
+        for(int i = 0; i <= back1; i++) {
+            if(doubleStack[i].compareTo(item) == 0) {
+                return i;
+            }
+        }
+        return -1;
+
+    }
+
+    // The below methods use the same logic as above, but with the order of the array entries starting at
+    // the end of the array and going towards the beginning as opposed to vice versa above. 
+
+    private boolean empty2() {
+        return back2 == arrSize;
+    }
+
+    private T peek2() {
+        if(!empty2()){
+            return doubleStack[back2];
+        } else {
+            return null;
+        }
+    }
+
+    private T pop2() {
+
+        if(!empty2()) {
+            back2++;
+            return doubleStack[back2-1];
+
+        } else {
+            return null;
+        }
+    }
+
+    private T push2(T item) {
+
+        if(back2-1 > back1) {
+            back2--;
+            doubleStack[back2] = item;
+        } else {
+            System.out.println("Overflow");
+        }
+        return item;
+
+    }
+
+    private int search2(T item) {
+
+        for(int i = front2-1; i >= back2; i--) {
+            if(doubleStack[i].compareTo(item) == 0) {
+                return i;
+            }
+        }
+        return -1;
+
+    }
+
+}
+
+4.
+a)
+Move car 4 from Input to S1
+Move car 3 from Input to S1
+Move car 1 from Input to Output
+Move car 8 from Input to S2
+Move car 2 from Input to Output
+Move car 3 from S1 to Output
+Move car 4 from S1 to Output
+Move car 7 from Input to S2
+Move car 6 from Input to S2
+Move car 9 from Input to S1
+Move car 5 from Input to Output
+Move car 6 from S2 to Output
+Move car 7 from S2 to Output
+Move car 8 from S2 to Output
+Move car 9 from S1 to Output
+
+b) An example for a train of length 9 that couldn't be rearranged according to the rules using 3 holding
+tracks would be any train whose front 4 cars are (from back to front in same order as problem 4) [9,8,7,6].
+The 6 would move first and would take one of the holding tracks.  Then the 7 would move, and since it is bigger than 6 it would have to go to a different holding track (say S2).  This is because if you put it in the same holding track, there
+would be no way to get the 6 out before the 7.  Then you would move 8, which is bigger than both 6 and 7,
+and by the same reasoning couldn't be on S1 or S2.  So you would have to send it to S3.  Then you have 9,
+which is bigger than all 3 of the previous trains, and there would be nowhere to put it where you could
+still put 6, 7, and 8 in the output track before 9.
+
+No matter what the next 5 trains are, there would be no way to get 6, 7, and 8 into the output track before the 9.

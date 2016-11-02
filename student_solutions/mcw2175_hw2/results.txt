@@ -1,0 +1,15 @@
+RUNNING 85 TESTS ON mcw2175_hw2
+
+ TEST1.java
+Unbalanced: symbol [ has no match (check)
+Unbalanced: symbol ) has no match (check)
+ TEST2.java
+Unbalanced: symbol { has no match (check)
+ TEST3.java
+ TEST4.java
+Unbalanced: symbol ) has no match (check)
+Unbalanced: symbol ] has no match (check)
+ TEST5.java
+Unbalanced: symbol } has no match (check)
+ TEST6.java
+Unbalanced: symbol " has no match 4

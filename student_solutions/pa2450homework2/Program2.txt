@@ -1,0 +1,12 @@
+Name: Pranav Arora 
+UNI: pa2450
+Description: Discusses the Big-O of enqueue and dequeue operations when queue is implemented using two stacks.
+
+For enqueue: It simply calls the push on S1, so let’s look the the push method in myStack. myStack is a LinkedList implementation of a stack. When push is called, it uses the LinkedList add method which has Big-O of O(1). This essentially means that enqueue has Big-O of O(1).
+
+tl;dr: O(1)
+____________________________________________________________________________________
+
+For dequeue: dequeue is little different than enqueue. The way my dequeue works is that when its called it checks if S2 is empty (because S2 is where the reversed order of S1 is being stored), and if it is then starts to pop S1 and push them to S2. After that, it pops/returns S2 to complete dequeue. This requires linear time as opposed to constant time. 
+
+tl;dr: O(n)

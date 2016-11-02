@@ -1,0 +1,26 @@
+RUNNING 6 TESTS ON Homework 2
+
+ TEST1.java
+***********
+Missing /* symbol
+ 
+ TEST2.java
+***********
+Missing symbol mismatch: { is not closed.
+ 
+ TEST3.java
+***********
+The file contains no symbol balancing error
+ 
+ TEST4.java
+***********
+Unbalanced { mismatched by )
+ 
+ TEST5.java
+***********
+Extra symbol } is mismatched
+ 
+ TEST6.java
+***********
+Missing " mismatch error.
+ 

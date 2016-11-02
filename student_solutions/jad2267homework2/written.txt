@@ -1,0 +1,140 @@
+Jack Damon UNI: jad2267 DATA STRUCTURES HW2 
+1) 
+
+public List printLots(List L, List P){
+	
+	Iterator<AnyType> Lit = L.iterator();
+
+	while(Lit.hasNext()){
+
+		int count = Lit.next();
+
+		Iterator<AnyType> Pit = P.iterator();
+
+		for(int i = 0; i < count-1; i++){
+			Pit.next();
+		}
+
+		System.out.println(Pit.next());
+		
+	}
+
+}
+
+2) 
+
+Given two sorted lists, L_1 and L_2, write a procedure to compute (L_1 AND L_2), using only the basic list operations. 
+
+3.4
+
+public List intersection(List a, List b){
+
+	Iterator<AnyType> itrA = a.iterator();
+
+	AnyType holder = new AnyType();
+
+	List c = new List();
+	
+
+	while(itrA.hasNext()){
+		AnyType current = itrA.next();
+		while(current==holder){
+			current = itrA.next();
+		}
+		holder = current;
+		binarySearch(l2, current);
+		if (binarySearch returns index){
+			c.add(current);
+		}
+	}
+
+	return c;
+
+}
+
+3) 
+
+// Write routines to implement two stacks using only one array. Your stack routines should not declare an overflow unless every slot in the array is used.
+
+public class twoStacksOneArray(){
+	
+	AnyType[] arr = (AnyType[]) new Object[10];
+
+	int S1Lid = 0;
+	int S2Lid = (arr.length - 1);
+
+	public Boolean isSpace(){
+		
+		if (((S2Lid - 1) - S1Lid) > 0){
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	public void push1(AnyType x){
+		if (isSpace()){
+			S1Lid = S1Lid++;
+			arr[S1Lid] = x;
+		} else {
+			System.out.println(“Stack Overflow Error: not enough space in underlying array”);
+			System.exit(-1);
+		}
+	}
+
+	public void push2(AnyType x){
+		if (isSpace()){
+			S2Lid = S2Lid—-;
+			arr[S2Lid] = x;
+		} else {
+			System.out.println(“Stack Overflow Error: not enough space in underlying array”);
+			System.exit(-1);
+		}
+	}
+
+	public AnyType pop1(){
+		AnyType val = arr[S1Lid];
+		arr.remove(S1Lid);
+		if (S1Lid == 0){
+			return val;
+		} else {
+			S1Lid = S1Lid—-;
+		}
+		return val;
+	}
+
+	public AnyType pop2(){
+		AnyType val = arr[S2Lid];
+		arr.remove(S2Lid);
+		if (S2Lid == (arr.length-1)){
+			return val;
+		} else {
+			S2Lid = S2Lid++;
+		}
+		return val;
+	}
+}
+
+
+4) 
+
+a) 
+
+	1) 4 to s1
+	2) 3 to s1
+	3) 1 to output
+	4) 8 to s2
+	5) 2 to output
+	6) pop s1, move 3 to output
+	7) pop s1, move 4 to output
+	8) 7 to s2
+	9) 6 to s1
+	10) 9 to s3
+	11) 5 to output
+	12) pop s1, move 6 to output
+	13) pop s2, move 7 to output
+	14) pop s2, move 8 to output
+	15) pop s3, move 9 to output
+
+b) [1,2,3,4,5,9,8,7,6]

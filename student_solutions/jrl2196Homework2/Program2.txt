@@ -1,0 +1,12 @@
+Joshua Learn
+TwoStackQueue big-Oh runtime discussion
+
+Enqueue: To enqueue an item, all we have to do is push it onto the stack. Our stack is implemented using a linked list,
+			so pushing an item onto the stack is an O(1) function (constant time) because we just add a link to the end 
+			of the list
+
+Dequeue: To dequeue an item, there are two different scenarios. Either we have items on our second stack and so dequeue
+		 only involves a simple pop, or our second stack is empty and so we have to pop every item off of stack 1 and 
+		 push it onto stack 2. In the first situation it takes constant time to dequeue ( O(1) ). In the second situation
+		 it takes O(N) linear time because we just have to go through every item we are currently storing which will grow
+		 linearly with our data size. 

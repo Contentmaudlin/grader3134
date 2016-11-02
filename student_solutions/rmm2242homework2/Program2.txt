@@ -1,0 +1,9 @@
+Program2.txt
+Rebecca Murray
+rmm2242
+
+In a file called Program2.txt, discuss the big-O running time of the enqueue and 
+dequeue operation for your queue implementation.
+
+My TwoStackQueue class uses two MyStack objects based off of doubly linked lists. Because of this, all of my push and pop operations are O(c). My enqueue operation is always just pushing one element to one of the stacks, so it is O(c). My dequeue operation sometimes requires popping every element from one MyStack object and pushing it to the second. Each instance of popping an element from one stack and pushing it to another is O(c), but it must be repeated for the number of elements in the first stack, making it O(N). The final act of popping a value from the second stack is O(c), so the runtime of the entire dequeue operation is O(N).
+

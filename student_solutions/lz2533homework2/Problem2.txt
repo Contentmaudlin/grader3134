@@ -1,0 +1,7 @@
+The Big-O runtime of enqueue is O(1)
+
+when S2 is empty
+The Big-O runtime of dequeue is O(n)
+
+when S2 is not empty
+The Big-O runtime of dequeue is O(1)

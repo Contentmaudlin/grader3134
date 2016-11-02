@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON hanseungwook_33570_688428_sh3264_homework2-3
+
+ TEST1.java
+Unbalanced! */ is mismatched.
+ TEST2.java
+Unbalanced! { is mismatched.
+ TEST3.java
+This file is balanced!
+ TEST4.java
+Unbalanced! { is mismatched.
+ TEST5.java
+Unbalanced! } is mismatched.
+ TEST6.java
+Unbalanced! " is mismatched.

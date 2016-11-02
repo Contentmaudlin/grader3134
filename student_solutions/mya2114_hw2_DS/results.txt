@@ -1,0 +1,20 @@
+RUNNING 85 TESTS ON mya2114_hw2_DS
+
+ TEST1.java
+Please enter the file name you want to check:
+1 (No such file or directory)
+ TEST2.java
+Please enter the file name you want to check:
+2 (No such file or directory)
+ TEST3.java
+Please enter the file name you want to check:
+3 (No such file or directory)
+ TEST4.java
+Please enter the file name you want to check:
+4 (No such file or directory)
+ TEST5.java
+Please enter the file name you want to check:
+5 (No such file or directory)
+ TEST6.java
+Please enter the file name you want to check:
+6 (No such file or directory)

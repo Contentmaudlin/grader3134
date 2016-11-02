@@ -1,0 +1,2 @@
+for my enqueue  method the Big(O) running time is 1 since it is just adding it to the firs stack
+for my dequeue method the Big(O) running time is N 

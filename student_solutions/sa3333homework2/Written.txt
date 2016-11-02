@@ -1,0 +1,220 @@
+							Written.txt
+							Sungmin An 
+							UNI: sa3333
+Problem1
+
+	public static <AnyType> void printLots(List<AnyType> L, List<Integer> P){
+		Iterator<Integer> iteratorP = P.iterator();
+		Iterator<AnyType> iteratorL = L.iterator();
+
+		int count = 0;
+		int idx = 0; 
+		if(iteratorP.hasNext()){
+			idx = iteratorP.next(); 
+		}
+		for(AnyType item : L){
+			if(count == idx){
+				System.out.println(item);
+				if(iteratorP.hasNext()){
+					idx = iteratorP.next();
+				}
+				else{
+					return; 
+				}
+				count++;
+			}
+			else{
+				count++; 
+			}
+		}
+	} 
+
+Problem2 (Weiss 3.4)
+* Assumes the lists contain integers, just as Professor Bauer mentioned in Piazza. 
+        
+        Iterator<Integer> list1Iterator = list1.iterator();
+        Iterator<Integer> list2Iterator = list2.iterator(); 
+        
+        if (list1Iterator.hasNext() && list2Iterator.hasNext()){ 
+            Integer pos1 = list1Iterator.next(); 
+            Integer pos2 = list2Iterator.next(); 
+
+            while(pos1 != null && pos2 != null){
+                if (pos1 > pos2){  
+                    if (list2Iterator.hasNext())
+                        pos2 = list2Iterator.next();
+                    else
+                        pos2 = null;
+                }
+                else if (pos1 < pos2){
+                    if (list1Iterator.hasNext())
+                        pos1 = list1Iterator.next();
+                    else
+                        pos1 = null;
+                }
+                else{
+                    intersection.add(pos1); 
+
+                    if (list1Iterator.hasNext())
+                        pos1 = list1Iterator.next();
+                    else
+                        pos1 = null;
+                    if (list2Iterator.hasNext()){
+                        pos2 = list2Iterator.next();
+                    }
+                    else{
+                        pos2 = null; 
+                    }
+                }
+            }
+
+            // Gets rid of duplicates. 
+            List<Integer> temp = new ArrayList<>();
+            for (int i = 0; i < intersection.size()-1; i++){
+
+                if (intersection.get(i) != intersection.get(i+1)){
+                    temp.add(intersection.get(i));
+                    // If last element is unique, add it. 
+                    if (i == intersection.size()-2){
+                        temp.add(intersection.get(i+1));
+                    }
+                }
+            }
+            intersection = temp; 
+        }
+
+Problem3 (Weiss 3.24)
+* When you pop an object, it doesn't actually remove it from the array, since it'll get
+  overwritten later. 
+
+	public class TwoStack<AnyType>{
+		
+		// Instance variables. 
+		AnyType[] list;
+		int top1, top2; 
+
+		// Constructor initializes IVs. 
+		@SuppressWarnings("unchecked")
+		public TwoStack(int size){
+			list = (AnyType[]) new Object[size];
+			top1 = 0;
+			top2 = list.length - 1; 
+		}
+
+		// Default constructor. 
+		@SuppressWarnings("unchecked")
+		public TwoStack(){
+			list = (AnyType[]) new Object[10]; 
+			top1 = 0; 
+			top2 = list.length - 1; 
+		}
+
+		// Pushes an element into stack1 & returns that element.  
+		// @return AnyType item. @param AnyType item. 
+		public AnyType push1(AnyType item){
+			if(top1 != top2 + 1){
+				list[top1++] = item; 
+			}
+			else{
+				throw new StackOverflowError("You got a stack overflow “ 					+ ”error!");
+			}
+			return item; 
+		}
+
+		// Pops the top element from stack1 & returns that element.
+		// @return AnyType. 
+		public AnyType pop1(){
+			if(!isEmpty1()){
+				return list[--top1];
+			}
+			else{
+				System.out.println("You're trying to pop an empty " +
+					"stack you fool!");
+				return null; 
+			}
+		}
+
+		// Checks to see if the stack is empty. @return boolean. 
+		public boolean isEmpty1(){
+			return top1 == 0; 
+		}
+
+		// Peeks the top element from stack1 & returns it
+		// without removing it. @return AnyType. 
+		public AnyType peek1(){
+			if(!isEmpty1()){
+				int prev = top1 - 1; 
+				return list[prev];
+			}
+			else{
+				System.out.println("You're trying to peek an empty " +
+					"stack you fool!");
+				return null; 
+			}
+		}
+
+		// Pushes an element into stack2 & returns that element. 
+		// @return AnyType item. @param AnyType item. 
+		public AnyType push2(AnyType item){
+			if(top2 != top1 - 1){
+				list[top2--] = item; 
+			}
+			else{
+				throw new StackOverflowError("You got a stack overlow 						error!");
+			}
+			return item; 
+		}
+
+		// Pops the top element from stack2 & returns it. 
+		// @return AnyType.
+		public AnyType pop2(){
+			if(!isEmpty2()){
+				return list[++top2];
+			}
+			else{
+				System.out.println("You're trying to pop an empty " +
+					"stack you fool!");
+				return null; 
+			}
+		}
+
+		// Checks to see if stack2 is empty. @return boolean.
+		public boolean isEmpty2(){
+			return top2 == list.length - 1; 
+		}
+
+		// Peeks the top element from stack2 & returns it 
+		// without removing it. @return AnyType.
+		public AnyType peek2(){
+			if(!isEmpty2()){
+				int prev = top2 + 1; 
+				return list[prev]; 
+			}
+			else{
+				System.out.println("You're trying to peek an empty "
+					+ "stack you fool!");
+				return null; 
+			}
+		}
+	}
+
+Problem4 
+a)	
+1. Dequeue “4” from input track and push into holding track S1. 
+2. Dequeue “3” from input track and push into holding track S2. 
+3. Dequeue “1” from input track and enqueue into output track. 
+4. Dequeue “8” from input track and push into holding track S3. 
+5. Dequeue “2” from input track and enqueue into output track. 
+6. Pop “3” from S2 and enqueue into output track. 
+7. Pop “4” from S1 and enqueue into output track. 
+8. Dequeue “7” from input track and push into holding track S2. 
+9. Dequeue “6” from input track and push into holding track S2. 
+10. Dequeue “9” from input track and push into holding track S1. 
+11. Dequeue “5” from input track and enqueue into output track. 
+12. Pop “6” from holding track S2 and enqueue into output track. 
+13. Pop “7” from holding track S2 and enqueue into output track. 
+14. Pop “8” from holding track S3 and enqueue into output track. 
+15. Pop “9” from holding track S1 and enqueue into output track.
+
+b) 
+[1, 9, 2, 8, 3, 7, 4, 6, 5]. This configuration doesn’t work because after we had pushed 3, 4, & 5 into the holding tracks, we can’t put 8 into any of the holding tracks because if we have a larger number be on top of a smaller number, we can’t move the smaller number into the output track. 

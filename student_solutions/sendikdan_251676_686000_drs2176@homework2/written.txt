@@ -1,0 +1,198 @@
+Dan Sendik
+drs2176
+Data Structures homework 2
+
+1. public interface Collection<AnyType> extends Iterable<AnyType> printLots(L,P) {
+	public static void main(String[] args) {
+		LinkedList<Integer> L = new LinkedList<Integer>();
+		LinkedList<Integer> P = new LinkedList<Integer>();
+        L.add( 1 );
+        L.add( 3 );
+        L.add( 5 );
+        L.add( 6 );
+        L.add( 7 );
+        L.add( 9 );
+        L.add( 14 );
+        L.add( 25 );
+
+        P.add( 1 );
+        P.add( 3 );
+        P.add( 4 );
+        P.add( 6 );
+        
+        Iterator<Integer> itr = P.iterator();
+        while(itr.hasNext()) {
+        	Object next_element = itr.next();
+            System.out.println(L.get((int) next_element));
+        }
+	}
+}
+
+but since we cannot use the get() method, here is an alternative with only the collection methods:
+
+	static void printLots(LinkedList <Integer> L, LinkedList<Integer> P) {
+		node current = head;
+		Iterator<Integer> listLIterator = L.iterator();
+		Iterator<Integer> listPIterator = P.iterator();
+		LinkedList<Integer> newList = new LinkedList<Integer>();
+		//Integer list_L_index = listLIterator.next();
+		while(listLIterator.hasNext() && listPIterator.hasNext()) {
+			int counter = 0;
+			for(int i = listPIterator.next(); i < P.size(); i++) {
+				if (i == count) {
+					newList.add(listLIterator.next());
+					current = current.next();
+					counter++;
+				}		
+			}
+			System.out.println(newList);
+		}
+	}
+
+
+
+
+2. Given two sorted lists, L1 and L2, write a procedure to compute L1 ∩ L2 using only the basic list operations.
+
+
+		LinkedList<Integer> L1 = new LinkedList<Integer>();
+		LinkedList<Integer> L2 = new LinkedList<Integer>();
+        L1.add( 2 );
+        L1.add( 3 );
+        L1.add( 5 );
+        L1.add( 6 );
+        L1.add( 7 );
+        L1.add( 9 );
+        L1.add( 14 );
+        L1.add( 25 );
+
+        L2.add( 1 );
+        L2.add( 7 );
+        L2.add( 3 );
+        L2.add( 6 );
+        L2.add( 25 );
+        
+        Iterator<Integer> itr1 = L1.iterator();
+        Iterator<Integer> itr2 = L2.iterator();
+        
+        while(itr1.hasNext() && itr2.hasNext()) {
+        	
+        	for( int i = L1.size() -1; i > -1; --i ) {
+        		
+        	    Integer element = L1.get( i );
+        	    
+        	    if(!L2.remove( element )) {
+        	        L1.remove( element );
+        	    }
+        	}
+        	System.out.println(L1);
+
+
+
+
+3. Write routines to implement two stacks using only one array. Your stack routines should not declare an overflow unless every slot in the array is used.
+
+public class written3 {
+
+	private int stack1_Top;
+	private static int stack2_Top;
+	private int arr[];
+	private int size;
+
+	public written3(int size) {
+		this.size = size;
+		arr = new int[size];
+		stack1_Top = -1;
+		stack2_Top = size;
+	}
+
+	public void push_To_Stack1(int data) {
+		if (stack1_Top + 1 == stack2_Top) { //stack1_top starts from the left side of the array
+			System.out.println("no more room in array");
+		} else {
+			arr[++stack1_Top] = data;
+		}
+	}
+
+	public void push_To_Stack2(int data) {
+		if (stack1_Top + 1 == stack2_Top) {
+			System.out.println("no more room in array");
+		} else {
+			arr[--stack2_Top] = data;
+		}
+	}
+
+	public int pop_From_Stack1() {
+		if (stack1_Top == -1) {
+			System.out.println("stack is empty");
+			return -1;
+		} else {
+			return arr[stack1_Top--];
+		}
+	}
+
+	public int pop_From_Stack2() {
+		if (stack1_Top == -1) {
+			System.out.println("stack is empty");
+			return -1;
+		} else {
+			return arr[stack2_Top--];
+		}
+	}
+	public int peek_Stack1() {
+		if (stack1_Is_Empty()) {
+			System.out.println("stack is empty");
+			return -1;
+		} else {
+			return arr[stack1_Top];
+		}
+	}
+	public int peek_Stack2() {
+		if (stack2_Is_Empty()) {
+			System.out.println("stack is empty");
+			return -1;
+		} else {
+			return arr[stack2_Top];
+		}
+	}
+	public boolean stack1_Is_Empty () {
+		return (stack1_Top == -1);
+	}
+	public boolean stack2_Is_Empty () {
+		return (stack2_Top == this.size);
+	}
+
+
+
+4.a)
+current_location(#x) x refers to the car number
+
+
+front(#4) -> s3
+front(#3) -> s2
+front(#1) -> output
+front(#8) -> s1
+front(#2) -> output
+s2(#3) -> output
+s3($4) -> output
+front(#7) -> s2
+front(#6) -> s2
+front(#9) -> s3
+front(#5) -> output
+s2(#6) -> output
+s2(#7) -> output
+s1(#8) -> output
+s3(#9) -> output
+
+output order: [9,8,7,6,5,4,3,2,1]
+
+
+4.b) train that cannot be rearranged:
+[3,8,7,4,9,2,6,1,5]
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON nys2112homework2
+
+ TEST1.java
+Error! Symbol [ mismatched with )
+ TEST2.java
+Error! Closing symbols not found for: { 
+ TEST3.java
+Yay. All symbols are balanced.
+ TEST4.java
+Error! Symbol { mismatched with )
+ TEST5.java
+Error! Closing symbol } without opening one.
+ TEST6.java
+Error! Unclosed string literal.

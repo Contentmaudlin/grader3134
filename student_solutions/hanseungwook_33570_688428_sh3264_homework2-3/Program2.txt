@@ -1,0 +1,3 @@
+The enqueue method has a running time of O(1) - constant time - because all it does is push (adds) an item to the front of the stack. This single operation is constant. Thus, it is highly efficient.
+
+The dequeue method has a running time of O(1) - constant time - as well because it just pops (removes) an item from the front of the input stack and pushes (adds) an item to the front of the output stack. The two operations are considered to be constant. Thus, this method is highly efficient.

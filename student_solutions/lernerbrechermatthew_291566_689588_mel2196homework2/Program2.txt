@@ -1,0 +1,8 @@
+Dequeue and Enquque are both O(1) in the best case and O(n) in the worst case where n is the number of elements in the queue.
+
+If no call to Dequque or Enqueue has been made, then both have O(1) time. This is because s1 and s2 are empty so the while loops will never be entered, which leaves just a push or a pop operation both of which take constant time.
+
+If a call to Enqueue has been made more recently than a call to Dequeue, then Enqueue will take O(1) time as s2 will have been emptied out by an earlier call to enqueue. In the same case, Dequeue will have O(n) time as in the previous call to Enqueue, all of the elements will have been pushed to s1, so the entirity of s1 will need to be emptied before reaching the line s2.pop(). 
+
+If a call to Dequeue has been made more recently than a call to Enqueue, then Dequeue will take O(1) time as s1 will have been emptied out by an earlier call to Dequeue. In the same case, Enqueue will have O(n) time as in the previous call to Enqueue, all of the elements will have been pushed to s2, so the entirity of s2 will need to be emptied before reaching the line s1.push(). 
+

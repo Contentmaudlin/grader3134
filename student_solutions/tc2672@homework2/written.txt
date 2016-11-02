@@ -1,0 +1,112 @@
+Tahiya Chowdhury 
+UNI: tc2672
+Written Homework #2
+1. 
+public void printLots(List<T> L, List<Integer>P) {
+ 	Iterator<Integer> listP = P.iterator();
+	While (listP.hasNext()) {
+       		int index = listP.next();
+	        Iterator<Integer> listL = L.iterator();
+		for(int i=0; i < index; i++) {
+         	   valueOfL = listL.next();
+               }
+      		System.out.println(valueOfL);
+	}
+  }
+2. 
+list common (list List1, list List2)
+{
+      list resultList;
+      int List1Pos = 0;
+      int List2Pos = 0;
+      int resultPos = 0;
+ 
+      while ( List1Pos != null && List2Pos != null ) {
+
+    		if (List1.get(List1Pos) < List2.get(List2Pos)) {
+        		List1Pos = List1Pos.next
+		}
+    
+    		else if (List1.get(List1Pos) > (List2.get(List2Pos)){
+      			List2Pos = List2Pos.next
+		}
+    		else {
+        		resultList.add (resultPos, List1.get(List1Pos))
+        		List1Pos = List1Pos.next
+        		List2Pos = List2Pos.next
+        		resultPos = resultPos.next
+		}
+	}    
+       return resultList;
+}
+
+
+
+
+3. 
+
+int stack1Pos = 0
+int stack2Pos = size - 1
+int stackArray [20]
+
+     push (int stackNumber, int value)
+     	if (stackNumber == 1){
+		if ((stack2Pos - stack1Pos) != 0 || (stack2Pos - stack1Pos) != -1) {
+			stackArray[stack1Pos] = value 
+			stack1Pos ++
+		}
+  		else {
+			print (“Stack overflow.”)
+		}
+	}
+	else {
+		// stack2Pos – stack1Pos!= -1 represents overlap between stacks
+		if ((stack2Pos – stack1Pos)!= -1){
+			stackArray[stack2Pos] = value
+			stack1Pos --
+		}
+		else {
+			print (“Stack overflow.”)
+		}
+	}
+
+    pop (int stackNumber) 
+	if (stackNumber == 1){
+		while (stack1Pos != 0) {
+			stack1Pos --
+			stackArray [stack1Pos] = 0
+      		} 
+		print (“No more elements to take out”)
+	}
+      
+	else {
+		while (stack2Pos != size -1 ) {
+			stack2Pos ++;
+			stackArray [stack2Pos] = 0
+      		}
+		 print (“No more elements to take out”)
+	}
+   
+	
+
+4. a) 
+Steps: 
+1. Move car 4 from the input track to holding track S3
+2. Move car 3 from the input track to holding track S3 (placing it on top of car 4)
+3. Move car 1 from the input track to the end of output track
+4. Move car 8 from the input track to holding track S2
+5. Move car 2 from the input track to the end of output track
+6. Move car 3 and 4 from holding track S3 to the end of the output track.
+7. Move car 7 from the input track to holding track S2 (placing it on top of car 8)
+8. Move car 6 from the input track to the now empty holding track S3
+9. Move car 9 from the input track to holding track S1
+10. Move car 5 from the input track to the end of output track
+11. Move car 6 from the holding track S3 to the end of output track
+12. Move car 7 and 8 from holding track S2 to the end of the output track
+13. Move car 9 from the holding track S1 to the end of output track
+
+b) [6, 9, 5, 2, 8,7, 1, 4, 3]
+
+
+
+

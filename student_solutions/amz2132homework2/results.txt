@@ -1,0 +1,26 @@
+RUNNING 6 TESTS ON amz2132homework2
+
+ TEST1.java
+***********
+Unbalanced! Symbol [ is unbalanced
+ 
+ TEST2.java
+***********
+Unbalanced! Symbol { is unbalanced
+ 
+ TEST3.java
+***********
+All symbols are balanced!
+ 
+ TEST4.java
+***********
+Unbalanced! Symbol { is unbalanced
+ 
+ TEST5.java
+***********
+Unbalanced! Symbol } is unbalanced
+ 
+ TEST6.java
+***********
+Unbalanced! Symbol " is unbalanced
+ 

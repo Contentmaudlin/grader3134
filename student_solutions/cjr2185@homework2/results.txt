@@ -1,0 +1,25 @@
+RUNNING 6 TESTS ON cjr2185@homework2
+
+ TEST1.java
+***********
+Type mismatch: )
+ 
+ TEST2.java
+***********
+Open: { without closing
+ 
+ TEST3.java
+***********
+ 
+ TEST4.java
+***********
+Type mismatch: )
+ 
+ TEST5.java
+***********
+Closing } without opening {
+ 
+ TEST6.java
+***********
+The string was not ended at the end of the line as it should be.
+ 

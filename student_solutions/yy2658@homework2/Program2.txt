@@ -1,0 +1,1 @@
+Big oh for the enqueue operation is 1, while the big oh for the dequeue operation is usually 1 if stack 2 contains content, and N if stack 2 is empty and all the content is in stack 1. In the long run, the big oh for dequeue should be 1. 

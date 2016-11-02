@@ -1,0 +1,3 @@
+The enqueue operation has a O(1) run time, because it's just changing the reference of a node in a linked list.
+The dequeue operation has a O(n) run time, because it requires iterating through the nodes of a linked list twice
+  (once to pop elements from the input stack, and the second time to pop n-1 elements from the output stack)

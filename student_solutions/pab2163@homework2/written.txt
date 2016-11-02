@@ -1,0 +1,224 @@
+Paul Bloom
+pab2163
+Written Part of Homework 2
+
+
+
+PROBLEM 1:
+
+
+public void printLots(List<AnyType> L, List<Integer> P) {
+	Iterator <Integer> pIterator = new Iterator <Integer>(P);
+	Iterator <AnyType> lIterator = new Iterator <AnyType>(L);
+
+	int i = 0;
+	int counter = 0; // keeps track of where the iterator is in List l
+	while(pIterator.hasNext()){
+		i = (int)P.next; // cast as int each element in P
+
+		/*I am not sure if I am doing this part quite right. What I want it to 
+		* do is iterate through list l, and just remove elements until the index
+		* of list l is equal to i (the current index to be printed from list p).
+		*I intend for the int counter to serve as the element that l should 
+		* actually print, for each value of i. If counter is less than i,
+		* then I want to remove that element from list L so that for the next
+		* pass through the iteration across L, that item does not need to be 
+		* checked again. Counter, however, should always keep track of which 
+		*element of the ORIGINAL list L is being checked (because counter does
+		*not reset each time through the outer while loop) so that the right 
+		*elements are printed. I'm not sure if I did things completely correctly
+		* in terms of always using hasNext() and next() and remove() correctly
+		* to add/remove the current vs. curent -1 element of the list */
+
+		while(lIterator.hasNext() & (counter <=i)){
+			counter++;
+			if(counter < i ){ // removes all elements of list L before element
+				// i. This should work on a sorted list
+				L.remove();
+			}
+			else if(counter == i){ // if the counter is equal to the desired
+				// index, then print contents of that index of List L
+				System.out.println(L.next());
+				L.remove()
+			}
+		}
+	}
+}
+
+PROBLEM 2:
+should output all elements common to both lists, with no duplicates
+
+public List<AnyType> common(List <AnyType> L1, List <AnyType> L2) {
+	ArrayList <AnyType> output;
+
+	int L1Position = 0; 
+	int L2Position = 0;
+	int outputPosition = 0;
+
+	Iterator <AnyType> L1Iterator = new Iterator <AnyType>(L1);
+	Iterator <AnyType> L2Iterator = new Iterator <AnyType>(L2);
+
+	while(L1Iterator.hasNext() && L2Iterator.hasNext()){
+		if(L1.get(L1Position) < L2.get(L2Position)) 
+		{
+			L1Position++; // if eleement in L2 is greater
+		}
+		else if(L1.get(L1osition) > L2.get(L2Position)){
+			L2Position++; // if element in L1 is greater
+		}
+		else{ // if they are equal
+			output.add(outputPosition, L1.get(L1Position));
+			L1Position++;
+			L2Position++;
+			outputPosition++;
+		}
+	}
+
+	return output;
+}
+
+WHOOPS
+// I accidentally did Weiss Excercise 3.5 before realizing it was not part of the 
+// homework. No chance I can get a bonus point or anything for this, is there?
+
+
+public List<AnyType> unique(List <AnyType> L1, List <AnyType> L2) {
+	ArrayList <AnyType> output;
+
+	int L1Position = 0; 
+	int L2Position = 0;
+	int outputPosition = 0;
+
+	Iterator <AnyType> L1Iterator = new Iterator <AnyType>(L1);
+	Iterator <AnyType> L2Iterator = new Iterator <AnyType>(L2);
+
+	while(L1Iterator.hasNext() && L2Iterator.hasNext){
+
+// if element in L1 is lesser, add it to output arraylist, increment L1 and ouput
+		if(L1.get(L1Position) < L2.get(L2Position)) // assuming that they are integers for now
+		// otherwise, would use compareTo on list elements of the same type
+		{
+			output.add(outputPosition, L1.get(L1Position));
+			outputPosition++;
+			L1Position++;
+
+// if element in L2 is lesser, add it to output arraylist, increment L1 and output
+		}
+		else if(L1.get(L1osition) > L2.get(L2Position)){
+			output.add(outputPosition, L2.get(L2Position));
+			outputPosition++;
+			L2Position++;
+
+// if elements are equal, add element from L1, increment all 
+		}
+		else{
+			output.add(outputPosition, L1.get(L1Position));
+			L1Position++;
+			L2Position++;
+			outputPosition++;
+		}
+	}
+
+	return output;
+}
+
+PROBLEM 3:
+
+public class twoStacks <AnyType> {
+	AnyType [] myArray = new AnyType[10];
+	int top1 =0; 
+	// stack one pushes/pops starting from index 0 and moves 
+	// towards the middle
+	int top2 =9;
+	// stack two pushes/pops starting from end and moves towards
+	// the middle
+
+
+	public void push1(<AnyType> a){
+		if((top1 < top2){ // if the ends of the two stacks haven't met
+			myArray[top1] = a;
+			top1++;
+		}
+		else{
+			System.out.prinln("Error: Stack overflow!");
+		}
+	}
+	public void push2(<AnyType> a){
+		if((top1 < top2){
+			myArray[top2] = a;
+			top2--;
+		}
+		else{
+			System.out.prinln("Error: Stack overflow!");
+		}
+	}
+	public <AnyType> pop1(){
+		if(top1 > 0){
+			return myArray[top1];
+			top1--;
+		}
+	}
+
+	public <AnyType> pop2(){
+		if(top2 < 9){
+			return myArray[top2];
+			top2++;
+		}
+	}
+
+	public boolean isEmpty(){
+		if(top1 == 0 & top2 == 9){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public <AnyType> peek1(){
+		if(top1 > 0){
+			return myArray[top1];
+		}
+		else{
+			return null;
+		}	
+	}
+
+	public <AnyType> peek2(){
+		if(top2 < 9){
+			return myArray[top2];
+		}
+		else{
+			return null;
+		}	
+	}	
+
+}
+
+
+
+PROBLEM 4:
+(A)
+
+Move front of input track (car 4) to S1
+Move front of input track (car 3) to S1
+Move front of input track (car 1) to output track
+Move front of input track (car 8) to S2
+Move front of input track (car 2) to output track
+Pop S1 (car 3) to output track
+Pop S1 (car 4) to output track
+Move front of input track (car 7) to S2
+Move front of input track (car 6) to S2
+Move front of input track (car 9) to S1
+Move front of input track (car 5) to output track
+Pop S2 (car 6) to output track
+Pop S2 (car 7) to output track
+Pop S2  (car 8) to output track
+Pop S1(car 9) to output track
+
+Couldn't this part be done using only 2 holding tracks? 
+
+(B) 
+
+[1,9,8,7,6,5,4,3,2] cannot be rearranged using 3 holding tracks
+

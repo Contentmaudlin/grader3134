@@ -1,0 +1,14 @@
+RUNNING 85 TESTS ON va2239homework2
+
+ TEST1.java
+Unbalanced! Missing /*.
+ TEST2.java
+Unbalanced! Missing }.
+ TEST3.java
+Looks like there's no imbalance!
+ TEST4.java
+Unbalanced! Left { is mismatched with right ).
+ TEST5.java
+Unbalanced! Missing {.
+ TEST6.java
+Unbalanced! Missing ".

@@ -1,0 +1,7 @@
+Francisco Fernandez De Ybarra
+FF2311
+
+
+The big O running time of enqueue is O(1) because it involves only a single operation of adding to an arrayList at the end of the list.
+
+The big O running time of dequeue however, is O(n) because it involves adding n items to an array list twice, which is 2n or Big O(n)

@@ -1,0 +1,17 @@
+STUDENT INFO:
+-------------
+NAME: Christophe Rimann
+UNI: cjr2185
+----------------------------------------------------------------------
+
+Program2 runtimes:
+	* Enqueue: Enqueue always just pushes the addition to the enqueue
+	  stack (S1). This takes O(1) time, because adding to a stack 
+	  composed of a doubly linked list will always be in constant time.
+	* Dequeue: dequeue is more complex. In most cases, it will also run
+	  in constant time, as popping off a stack composed of a linked list
+	  will run in constant time. However, in the case where the dequeue
+	  stack is empty, it will take O(n) time, because it will need to 
+	  pop everything off of S1 and push it to S2. In fact it takes 2n 
+	  time (one per pop and one per push) but this simplifies to O(n).
+	  as such, in the WORST CASE, it runs in O(n) time. 

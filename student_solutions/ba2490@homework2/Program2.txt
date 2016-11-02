@@ -1,0 +1,10 @@
+Program2.txt
+
+Ben Arbib - ba2490
+
+TwoStackQueues.java
+
+enqueue - adds an element to the first stack. that is an order of Big-O(1)
+
+dequeue - removes and returns the top element at stack2 if there excist an element. in this case it is an order of Big-O(1)
+if the stack is empty it transferes all elements from stack1 to stack2 and then removes and returns the top element at stack2. in this case it is an order of Big-O(n). So the dequeue worst case is an order of Big-O(n).

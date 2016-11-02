@@ -1,0 +1,7 @@
+
+Program 2, question C
+——————————————————————
+
+The big-O running time of enqueue is simply O(1) since all enqueue does is add the element on to the first stack.
+
+For dequeue, however, the big-O running time is O(n), since in the worst case scenario, all of the elements would have to be copied into the second stack.

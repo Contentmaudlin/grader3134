@@ -1,0 +1,67 @@
+RUNNING 85 TESTS ON yz3083HW2
+
+ TEST1.java
+../../testfiles/Test1.java
+Error, in imbalance of )
+match
+match
+match
+match
+match
+match
+[ is unbalanced
+ TEST2.java
+../../testfiles/Test2.java
+match
+match
+match
+match
+match
+match
+match
+{ is unbalanced
+ TEST3.java
+../../testfiles/Test3.java
+match
+match
+match
+match
+match
+match
+match
+ TEST4.java
+../../testfiles/Test4.java
+match
+match
+Error, in imbalance of )
+match
+match
+match
+match
+match
+Error, in imbalance of ]
+match
+Error, in imbalance of }
+java.lang.IndexOutOfBoundsException: Index: -1, Size: 0
+File not found
+ TEST5.java
+../../testfiles/Test5.java
+match
+match
+match
+match
+match
+match
+match
+Error, in imbalance of }
+match
+ TEST6.java
+../../testfiles/Test6.java
+match
+match
+match
+match
+match
+missing " 
+match
+match
