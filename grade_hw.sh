@@ -61,17 +61,17 @@ COUNTER=0
 while [ $COUNTER -lt $dircount ]; do
 	echo "Testing: ${PWD##*/}"
 	printf "RUNNING $((testcount - 1)) TESTS ON ${PWD##*/}\n\n" > results.txt
-	javac SymbolBalance.java > /dev/null 2>&1
-	fileexists=$(ls | grep "SymbolBalance.class")
+	javac Problem2.java > /dev/null 2>&1
+	fileexists=$(ls | grep "Problem2.class")
 	if [[ -z "$fileexists" ]]; then
 		echo "Student file doesn't exist / doesn't compile / wrong name" >> results.txt
 		echo ":(   Couldn't test for ${PWD##*/}"
 	else
 		COUNTER2=1
 		while [ $COUNTER2 -lt ${testcount} ]; do
-			echo "$TESTING TEST${COUNTER2}.java" >> results.txt
+			echo "$TESTING test${COUNTER2}.txt" >> results.txt
 			echo "***********" >> results.txt
-			java SymbolBalance "../../testfiles/Test${COUNTER2}.java" >> results.txt 2>&1
+			java Problem2 "../../testfiles/test${COUNTER2}.txt" >> results.txt 2>&1
 			echo " " >> results.txt
 			let COUNTER2=COUNTER2+1
 		done
