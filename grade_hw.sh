@@ -71,7 +71,7 @@ while [ $COUNTER -lt $dircount ]; do
 		while [ $COUNTER2 -lt ${testcount} ]; do
 			echo "$TESTING test${COUNTER2}.txt" >> results.txt
 			echo "***********" >> results.txt
-			java Problem2 "../../testfiles/test${COUNTER2}.txt" >> results.txt 2>&1
+			echo "../../testfiles/test${COUNTER2}.txt" | java Problem2 "../../testfiles/test${COUNTER2}.txt" >> results.txt 2>&1
 			echo " " >> results.txt
 			let COUNTER2=COUNTER2+1
 		done
